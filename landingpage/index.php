@@ -6,21 +6,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Frontfill | Dynamic content app</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,700i" rel="stylesheet">
-        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <nav class="navigation">
-            <ul>
-                <li><a href="#">Frontfill</a></li>
-             	<li><a href="#">How it works</a></li>
-             	<li><a href="#">Pricing</a></li>
-             	<li><a href="#" class="CTA-btn">Try it now!</a></li>
-            </ul>
+        	<div class="navigation-left">
+        		<div class="navigation-left-img"></div>
+        	</div>
+            <div class="navigation-right">
+            	<ul>
+	             	<li><a href="#">How it works</a></li>
+	             	<li><a href="#">Pricing</a></li>
+	             	<li><a href="#" class="CTA-btn">Try it now!</a></li>
+	            </ul>
+            </div>
         </nav>
 
         <div class="hero">
         	<div class="hero-left">
-        		<h1>It is time to make your <b>static</b> site <i>dynamic</i>!</h1>
+        		<h1>It is time to make your <strong>static</strong> site <i>dynamic</i>!</h1>
         		<h3>Spare the hassle of content management systems, and blah blah</h3>
         		<a href="#" class="CTA-btn">Try it now!</a>
         	</div>
@@ -33,7 +37,7 @@
         	<h2>How It Works</h2>
         	<div class="info-row">
         		<div class="info-row-left">
-        			<div class="info-row-image"></div>
+        			<div class="info-row-image step-1"></div>
         		</div>
         		<div class="info-row-right">
         			<h3>Create your content</h3>
@@ -46,12 +50,12 @@
         			<p>Your developer will use our API to implement all the dynamic fields needed on your website. This only needs to be done a single time in order to give you control of your site!</p>
         		</div>
         		<div class="info-row-right">
-        			<div class="info-row-image"></div>
+        			<div class="info-row-image step-2"></div>
         		</div>
         	</div>
         	<div class="info-row">
         		<div class="info-row-left">
-        			<div class="info-row-image"></div>
+        			<div class="info-row-image step-3"></div>
         		</div>
         		<div class="info-row-right">
         			<h3>Update your website - forever!</h3>
@@ -64,7 +68,7 @@
         	<h2>Pricing</h2>
         	<div class="pricing-row">
         		<div class="pricing-row-left">
-        			<h2>Frontfill</h2>
+        			<div class="pricing-row-left-logo"></div>
         			<ul>
         			    <li>Unlimited API calls</li>
         			    <li>Unlimited content elements</li>
@@ -75,7 +79,7 @@
         		</div>
         		<div class="pricing-row-divider"></div>
         		<div class="pricing-row-right">
-        			<h2>Frontfill Pro</h2>
+        			<div class="pricing-row-right-logo"></div>
         			<ul>
         				<li>Unlimited number of websites</li>
         			    <li>Share dashboard with other users</li>
@@ -90,7 +94,7 @@
         </div>
 
         <footer class="footer">
-        	<h2>Frontfill</h2>
+        	<div class="footer-img"></div>
         </footer>
     </body>
 </html>

@@ -1,0 +1,120 @@
+body {
+  margin: 0 0;
+  padding: 0 0; }
+
+h1, h2, h3, h4, p, a {
+  font-family: "Roboto", Helvetica, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+h1, h2, h3, h4, a {
+  font-weight: 300; }
+
+.CTA-btn {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 24px;
+  border: solid 1px #FFFFFF;
+  border-radius: 10px;
+  padding: 5px 10px; }
+
+.navigation {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding-top: 20px; }
+  .navigation .navigation-left {
+    float: left;
+    padding-left: 30px; }
+    .navigation .navigation-left .navigation-left-img {
+      height: 100px;
+      width: 300px;
+      background-image: url("gfx/logo-hvid.svg");
+      background-size: contain;
+      background-repeat: no-repeat; }
+  .navigation .navigation-right {
+    float: right;
+    padding-right: 20px; }
+    .navigation .navigation-right ul {
+      list-style: none; }
+      .navigation .navigation-right ul li {
+        display: inline;
+        padding: 20px; }
+        .navigation .navigation-right ul li a {
+          color: #FFFFFF;
+          text-decoration: none;
+          font-size: 24px; }
+
+.hero {
+  height: 80vh;
+  width: 100%;
+  background-image: url("gfx/hero-img.svg");
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
+  color: #FFFFFF; }
+  .hero .hero-left {
+    float: left;
+    padding-top: 300px;
+    padding-left: 10%;
+    width: 25%; }
+    .hero .hero-left h1 {
+      padding: 15px 0; }
+    .hero .hero-left h3 {
+      padding: 10px 0 20px 0;
+      line-height: 1.5; }
+  .hero .hero-right {
+    float: right;
+    padding-top: 200px;
+    width: 50%; }
+    .hero .hero-right .hero-right-image {
+      height: 600px;
+      width: 100%;
+      background-image: url("gfx/iMac.svg");
+      background-size: contain;
+      background-repeat: no-repeat; }
+
+.info .info-row .info-row-image {
+  height: 400px;
+  width: 400px; }
+
+.info .info-row .step-1 {
+  background-image: url("gfx/snap-girl.svg");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.info .info-row .step-2 {
+  background-image: url("gfx/developer.jpg");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.info .info-row .step-3 {
+  background-image: url("gfx/happy-girl.svg");
+  background-size: contain;
+  background-repeat: no-repeat; }
+
+.pricing {
+  height: 800px;
+  width: 100%;
+  background-image: url("gfx/pricing-bg.svg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .pricing .pricing-row .pricing-row-left .pricing-row-left-logo {
+    height: 100px;
+    width: 300px;
+    background-image: url("gfx/logo-hvid.svg");
+    background-size: contain;
+    background-repeat: no-repeat; }
+  .pricing .pricing-row .pricing-row-right .pricing-row-right-logo {
+    height: 100px;
+    width: 300px;
+    background-image: url("gfx/frontfill-pro.svg");
+    background-size: contain;
+    background-repeat: no-repeat; }
+
+.footer .footer-img {
+  height: 100px;
+  width: 300px;
+  background-image: url("gfx/logo-farvet.svg");
+  background-size: contain;
+  background-repeat: no-repeat; }

@@ -12,3 +12,203 @@ $light-grey: #F2F2F2;
 $grey: #E0E0E0;
 
 
+//////////////////////////
+//     General          //
+//////////////////////////
+
+body {
+	margin: 0 0;
+	padding: 0 0;
+}
+
+h1, h2, h3, h4, p, a {
+	font-family: $font-stack;
+	padding: 0; 
+	margin: 0;
+}
+
+h1, h2, h3, h4, a{
+	font-weight: 300;
+}
+
+.CTA-btn {
+	color: $white; 
+	text-decoration: none;
+	font-size: 24px;
+	border: solid 1px $white;
+	border-radius: 10px;
+	padding: 5px 10px;
+}
+
+
+//////////////////////////
+//     Navigation       //
+//////////////////////////
+.navigation {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	padding-top: 20px;
+	
+	.navigation-left {
+		float: left;
+		padding-left: 30px;	
+		.navigation-left-img {
+			height: 100px;
+			width: 300px;
+			background-image: url("gfx/logo-hvid.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+
+	.navigation-right {	
+		float: right;	
+		padding-right: 20px;	
+		ul {
+			list-style: none;
+
+			li {
+				display: inline;
+				padding: 20px;
+				a {
+					color: $white; 
+					text-decoration: none;
+					font-size: 24px;
+				}
+			}
+		}
+	}
+}
+
+
+
+//////////////////////////
+//     Hero             //
+//////////////////////////
+.hero {
+	height: 80vh;
+	width: 100%;
+	background-image: url("gfx/hero-img.svg");
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-position: bottom; 
+	color: $white;
+
+	.hero-left {
+		float: left; 
+		padding-top: 300px;
+		padding-left: 10%;
+		width: 25%;
+
+		h1 {
+			padding: 15px 0;
+		}
+
+		h3 {
+			padding: 10px 0 20px 0;
+			line-height: 1.5;
+		}
+	}
+
+	.hero-right {
+		float: right; 
+		padding-top: 200px;
+		width: 50%;
+
+		.hero-right-image {
+			height: 600px;
+			width: 100%;
+			background-image: url("gfx/iMac.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+
+//////////////////////////
+//     Info             //
+//////////////////////////
+.info {
+	.info-row {
+		.info-row-left {
+
+		}
+
+		.info-row-right {
+			
+		}
+
+		.info-row-image {
+			height: 400px;
+			width: 400px;
+		}
+
+		.step-1 {
+			background-image: url("gfx/snap-girl.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.step-2 {
+			background-image: url("gfx/developer.jpg");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+
+		.step-3 {
+			background-image: url("gfx/happy-girl.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+		}
+	}
+}
+
+
+//////////////////////////
+//     Pricing          //
+//////////////////////////
+.pricing {
+	height: 800px;
+	width: 100%;
+	background-image: url("gfx/pricing-bg.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	.pricing-row {
+		.pricing-row-left {
+			.pricing-row-left-logo {
+				height: 100px;
+				width: 300px;
+				background-image: url("gfx/logo-hvid.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+
+		.pricing-row-right {
+			.pricing-row-right-logo {
+				height: 100px;
+				width: 300px;
+				background-image: url("gfx/frontfill-pro.svg");
+				background-size: contain;
+				background-repeat: no-repeat;
+			}
+		}
+	}
+}
+
+
+//////////////////////////
+//     Footer           //
+//////////////////////////
+.footer {
+	.footer-img {
+		height: 100px;
+		width: 300px;
+		background-image: url("gfx/logo-farvet.svg");
+		background-size: contain;
+		background-repeat: no-repeat;
+	}
+}
