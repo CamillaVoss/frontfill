@@ -70,14 +70,18 @@
         		<div class="pricing-row-left">
         			<div class="pricing-row-left-logo"></div>
         			<ul>
+        			    <li>Single website</li>
+        			    <li>Single user pr. dashboard</li>
         			    <li>Unlimited API calls</li>
         			    <li>Unlimited content elements</li>
         			    <li>Userfriendly interface</li>
         			</ul>
-					<a href="#" class="CTA-btn">Try it now!</a>
-					<p>at $ xx/month</p>
+        			<div class="pricing-row-CTA">
+        				<a href="#" class="CTA-btn">Try it now!</a>
+						<p>at $ xx/month</p>
+        			</div>
         		</div>
-        		<div class="pricing-row-divider"></div>
+        		<div class="pricing-row-divider"><hr width="2" size="450"></div>
         		<div class="pricing-row-right">
         			<div class="pricing-row-right-logo"></div>
         			<ul>
@@ -87,8 +91,10 @@
         			    <li>Unlimited content elements</li>
         			    <li>Userfriendly interface</li>
         			</ul>
-        			<a href="#" class="CTA-btn">Try it now!</a>
-					<p>at $ xx/month</p>
+        			<div class="pricing-row-CTA">
+        				<a href="#" class="CTA-btn">Try it now!</a>
+						<p>at $ xx/month</p>
+        			</div>
         		</div>
         	</div>
         </div>
