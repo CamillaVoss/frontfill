@@ -142,3 +142,142 @@ h1, h2, h3, h4, a{
 		}
 	}
 }
+
+
+//////////////////////////
+//      Dashboard       //
+//////////////////////////
+
+.dashboard {
+	width: 100%;
+	height: 100vh;
+	display: flex;
+
+	.sidebar {
+		background-color: $dark-grey;
+		flex-grow: 0;
+		min-width: 250px;
+
+		.sidebar-logo {
+			height: 35px;
+    		width: 150px;	
+			background-image: url("gfx/logo-blue.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+			margin: 25px auto 20px auto;
+		}
+
+		.section {
+			height: 60px;
+
+			button {
+				float: left;
+				background-color: Transparent;
+				border: none; 
+				line-height: 80px;
+				position: absolute;
+				margin-left: 20px;
+
+			}
+
+			h4 {
+				position: relative;
+				margin: 0 auto;
+				text-align: center;
+				color: $white;
+				font-size: 20px;
+				overflow: hidden;
+				line-height: 60px;
+			}
+		}
+
+		.divider {
+			height: 3px;
+			background: #343838;
+			box-shadow: inset 0 1px 2px 0 rgba(0,0,0,0.50);
+		}
+	}
+
+	.content {
+		background-color: $light-grey;
+		width: 100%;
+		background-image: url("gfx/bg-image.svg");
+		background-size: 50%;
+		background-repeat: no-repeat;
+		background-position: center;
+		flex-grow: 5;
+		box-shadow: -4px 0 14px -4px rgba(0,0,0,0.50);
+
+		.navigation {
+			position: fixed;
+			top: 0;
+			width: 100%;
+			background-color: $white;
+			box-shadow: -4px 2px 14px -4px rgba(0,0,0,0.50);
+			overflow: hidden;
+
+			.navigation-right {	
+				float: right;
+				width: 56%;	
+				ul {
+					list-style: none;
+
+					li {
+						display: inline-block;
+						padding: 10px 20px;
+						a {
+							color: $aqua-blue; 
+							text-decoration: none;
+							font-size: 24px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+
+//////////////////////////
+//      Dashboard       //
+//////////////////////////
+
+.sidebar {
+	.TOC {
+		padding-top: 10px;
+		padding-left: 10px;
+		color: $white;
+		font-family: $font-stack;
+		font-weight: 300;
+		line-height: 1.5;
+	}
+}
+
+.dashboard {
+	.documentation {
+		background-image: none;
+
+		.documentation-text {
+			padding: 150px 60px 0 60px;
+			color: $dark-grey;
+
+			h1 {
+				padding-bottom: 20px;
+			}
+
+			h2 {
+				padding-bottom: 15px;
+			}
+
+			h3 {
+				padding-bottom: 10px;
+			}
+
+			p {
+				padding-bottom: 40px;
+			}
+		}
+	}
+}
+
