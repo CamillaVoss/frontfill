@@ -42,23 +42,53 @@ h1, h2, h3, h4, a {
         padding: 20px; }
         .navigation .navigation-right ul li a {
           color: #FFFFFF;
+          mix-blend-mode: difference;
           text-decoration: none;
           font-size: 24px; }
+  @media screen and (max-width: 870px) {
+    .navigation .navigation-left .navigation-left-img {
+      height: 60px;
+      width: 60px;
+      background-image: url("gfx/box.svg"); } }
+  @media screen and (max-width: 620px) {
+    .navigation .navigation-right ul li {
+      padding: 10px; }
+      .navigation .navigation-right ul li a {
+        font-size: 18px; } }
+  @media screen and (max-width: 480px) {
+    .navigation .navigation-left {
+      float: none;
+      width: 100%;
+      padding: 0;
+      padding-bottom: 5px; }
+      .navigation .navigation-left .navigation-left-img {
+        margin: 0 auto;
+        height: 50px;
+        width: 182px;
+        background-image: url("gfx/logo-hvid.svg"); }
+    .navigation .navigation-right {
+      float: none;
+      width: 100%;
+      padding-top: 15px; }
+      .navigation .navigation-right ul {
+        margin: 0 auto;
+        text-align: center;
+        padding: 0; }
+        .navigation .navigation-right ul li {
+          padding: 5px; } }
 
 .hero {
-  height: 90vh;
+  height: 760px;
   width: 100%;
-  background-image: url("gfx/hero-img.svg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: bottom;
+  background-color: #004E64;
   color: #FFFFFF;
   overflow: hidden; }
   .hero .hero-left {
     float: left;
     padding-top: 200px;
     padding-left: 10%;
-    width: 25%; }
+    width: 25%;
+    min-width: 310px; }
     .hero .hero-left h1 {
       padding: 15px 0; }
     .hero .hero-left h3 {
@@ -67,15 +97,48 @@ h1, h2, h3, h4, a {
   .hero .hero-right {
     float: right;
     padding-top: 150px;
+    padding-right: 40px;
     width: 50%; }
     .hero .hero-right .hero-right-image {
       height: 500px;
       width: 100%;
       background-image: url("gfx/iMac.svg");
       background-size: contain;
-      background-repeat: no-repeat; }
+      background-repeat: no-repeat;
+      background-position: center; }
+  @media screen and (max-width: 950px) {
+    .hero .hero-left {
+      padding-left: 5%; } }
+  @media screen and (max-width: 870px) {
+    .hero .hero-left {
+      float: none;
+      padding-top: 120px;
+      padding-left: 15%; }
+    .hero .hero-right {
+      padding-top: 35px;
+      padding-right: 7%;
+      width: 440px; }
+      .hero .hero-right .hero-right-image {
+        background-position: top; } }
+  @media screen and (max-width: 520px) {
+    .hero .hero-left {
+      width: 80%;
+      min-width: 200px;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0; }
+    .hero .hero-right {
+      float: none;
+      width: 80%;
+      margin: 0 auto;
+      padding-left: 0;
+      padding-right: 0; } }
+  @media screen and (max-width: 475px) {
+    .hero .hero-left {
+      padding-top: 150px; } }
 
 .info {
+  background-color: white;
   padding-top: 70px;
   padding-bottom: 70px;
   width: 100%;
@@ -85,17 +148,6 @@ h1, h2, h3, h4, a {
   .info h2 {
     color: #00A5CF;
     padding-bottom: 50px; }
-  .info h2:after {
-    content: '';
-    position: absolute;
-    bottom: -35px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 30px;
-    height: 3px;
-    background: #004E64; }
   .info .info-row {
     height: 350px;
     text-align: left;
@@ -135,6 +187,46 @@ h1, h2, h3, h4, a {
       background-size: contain;
       background-repeat: no-repeat;
       background-position: right; }
+  @media screen and (max-width: 900px) {
+    .info .info-row {
+      width: 80%; }
+      .info .info-row .info-row-image {
+        height: 300px;
+        width: 300px; } }
+  @media screen and (max-width: 800px) {
+    .info .info-row {
+      height: 100%;
+      width: 80%;
+      margin: 0 auto;
+      padding-top: 0px; }
+      .info .info-row .info-row-right, .info .info-row .info-row-left {
+        float: none;
+        height: 100%;
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto; }
+        .info .info-row .info-row-right .info-row-image, .info .info-row .info-row-left .info-row-image {
+          float: none;
+          margin: 0 auto; }
+        .info .info-row .info-row-right h3, .info .info-row .info-row-right p, .info .info-row .info-row-left h3, .info .info-row .info-row-left p {
+          text-align: center;
+          padding-top: 15px; }
+        .info .info-row .info-row-right p, .info .info-row .info-row-left p {
+          padding-top: 0; }
+        .info .info-row .info-row-right .step-3, .info .info-row .info-row-left .step-3 {
+          height: 350px;
+          width: 170px;
+          background-position: center bottom; }
+        .info .info-row .info-row-right .step-2, .info .info-row .info-row-left .step-2 {
+          background-position: center bottom; }
+        .info .info-row .info-row-right .step-1, .info .info-row .info-row-left .step-1 {
+          background-position: center bottom; } }
+  @media screen and (max-width: 400px) {
+    .info .info-row {
+      width: 80%; }
+      .info .info-row .info-row-image {
+        height: 200px;
+        width: 200px; } }
 
 .pricing {
   height: 100%;
@@ -147,17 +239,6 @@ h1, h2, h3, h4, a {
   .pricing h2 {
     padding-top: 50px;
     color: #FFFFFF; }
-  .pricing h2:after {
-    content: '';
-    position: absolute;
-    bottom: -1374px;
-    left: 50%;
-    -webkit-transform: translateX(-50%);
-    -ms-transform: translateX(-50%);
-    transform: translateX(-50%);
-    width: 30px;
-    height: 3px;
-    background: #FFFFFF; }
   .pricing .pricing-row {
     padding-top: 50px;
     padding-bottom: 50px;
@@ -208,6 +289,21 @@ h1, h2, h3, h4, a {
         background-image: url("gfx/frontfill-pro.svg");
         background-size: contain;
         background-repeat: no-repeat; }
+  @media screen and (max-width: 600px) {
+    .pricing .pricing-row {
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      padding-top: 10px; }
+      .pricing .pricing-row .pricing-row-divider {
+        display: none; }
+      .pricing .pricing-row .pricing-row-left, .pricing .pricing-row .pricing-row-right {
+        margin: 0 auto; }
+      .pricing .pricing-row .pricing-row-right {
+        border-top: 2px solid #FFFFFF;
+        padding-top: 40px;
+        margin-top: 30px; } }
 
 .footer {
   overflow: hidden; }

@@ -1,6 +1,7 @@
 //////////////////////////
 //     VARIABELS        //
 //////////////////////////
+
 $font-stack:   'Roboto', Helvetica, sans-serif;
 
 $light-blue: #00A5CF;
@@ -60,7 +61,7 @@ h1, h2, h3, h4, a{
 			background-size: contain;
 			background-repeat: no-repeat;
 		}
-	}
+	} 
 
 	.navigation-right {	
 		float: right;	
@@ -73,8 +74,65 @@ h1, h2, h3, h4, a{
 				padding: 20px;
 				a {
 					color: $white; 
+					mix-blend-mode: difference;
 					text-decoration: none;
 					font-size: 24px;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 870px) { 
+		.navigation-left {
+			.navigation-left-img {
+				height: 60px;
+    			width: 60px;
+				background-image: url("gfx/box.svg");
+			}
+		}
+	}
+
+	@media screen and (max-width: 620px) { 
+		.navigation-right {
+			ul {
+
+				li {
+					padding: 10px;
+
+					a {
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 480px) { 
+		.navigation-left {
+			float: none;
+			width: 100%;
+			padding: 0;
+			padding-bottom: 5px;
+			.navigation-left-img {
+				margin: 0 auto;
+				height: 50px;
+   				width: 182px;
+				background-image: url("gfx/logo-hvid.svg");
+			}
+		} 
+
+		.navigation-right {	
+			float: none;	
+			width: 100%;
+			padding-top: 15px;
+
+			ul {
+				margin: 0 auto;
+				text-align: center;
+				padding: 0;
+
+				li {
+					padding: 5px;
 				}
 			}
 		}
@@ -87,12 +145,13 @@ h1, h2, h3, h4, a{
 //     Hero             //
 //////////////////////////
 .hero {
-	height: 90vh;
+	height: 760px;
 	width: 100%;
-	background-image: url("gfx/hero-img.svg");
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-position: bottom; 
+	// background-image: url("gfx/hero-img.svg");
+	// background-size: 100%;
+	// background-repeat: no-repeat;
+	// background-position: bottom; 
+	background-color: $aqua-blue;
 	color: $white;
 	overflow: hidden;
 
@@ -101,6 +160,7 @@ h1, h2, h3, h4, a{
 		padding-top: 200px;
 		padding-left: 10%;
 		width: 25%;
+		min-width: 310px;
 
 		h1 {
 			padding: 15px 0;
@@ -115,6 +175,7 @@ h1, h2, h3, h4, a{
 	.hero-right {
 		float: right; 
 		padding-top: 150px;
+		padding-right: 40px;
 		width: 50%;
 
 		.hero-right-image {
@@ -123,15 +184,64 @@ h1, h2, h3, h4, a{
 			background-image: url("gfx/iMac.svg");
 			background-size: contain;
 			background-repeat: no-repeat;
+			background-position: center;
+		}
+	}
+
+	@media screen and (max-width: 950px) { 
+		.hero-left {
+			padding-left: 5%;
+		}
+	}
+
+	@media screen and (max-width: 870px) { 
+		.hero-left {
+			float: none;
+			padding-top: 120px;
+			padding-left: 15%;
+		}
+
+		.hero-right {
+		    padding-top: 35px;
+			padding-right: 7%;
+    		width: 440px;
+
+    		.hero-right-image {
+    			background-position: top;
+    		}
+		}
+	}
+
+	@media screen and (max-width: 520px) { 
+		.hero-left {
+			width: 80%;
+			min-width: 200px;
+			margin: 0 auto;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.hero-right {
+			float: none;
+		    width: 80%;
+			margin: 0 auto;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+
+	@media screen and (max-width: 475px) { 
+		.hero-left {
+			padding-top: 150px;
 		}
 	}
 }
-
 
 //////////////////////////
 //     Info             //
 //////////////////////////
 .info {
+	background-color: white;
 	padding-top: 70px;
 	padding-bottom: 70px;
 	width: 100%;
@@ -142,19 +252,6 @@ h1, h2, h3, h4, a{
 	h2 {
 		color: $light-blue;
 		padding-bottom: 50px;
-	}
-
-	h2:after {
-	    content: '';
-	    position: absolute;
-	    bottom: -35px;
-	    left: 50%;
-	    -webkit-transform: translateX(-50%);
-	    -ms-transform: translateX(-50%);
-	    transform: translateX(-50%);
-	    width: 30px;
-	    height: 3px;
-	    background: $aqua-blue;
 	}
 
 	.info-row {
@@ -215,6 +312,74 @@ h1, h2, h3, h4, a{
 			background-position: right;
 		}
 	}
+
+	@media screen and (max-width: 900px) { 
+		.info-row {
+			width: 80%;
+
+			.info-row-image {
+				height: 300px;
+				width: 300px;
+			}
+		}
+	}
+
+	@media screen and (max-width: 800px) { 
+		.info-row {
+			height: 100%;
+			width: 80%;
+			margin: 0 auto;
+			padding-top: 0px;
+
+			.info-row-right, .info-row-left {
+				float: none;
+				height: 100%;
+				width: 100%;
+				max-width: 350px;
+				margin: 0 auto;
+
+				.info-row-image {
+					float: none;
+					margin: 0 auto;
+				}
+
+				h3, p {
+					text-align: center;
+					padding-top: 15px;
+				}
+
+				p {
+					padding-top: 0;
+				}
+
+				.step-3 {
+					height: 350px;
+					width: 170px;
+					background-position: center bottom;
+				}
+
+				.step-2 {
+					background-position: center bottom;
+				}
+
+				.step-1 {
+					background-position: center bottom;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 400px) { 
+		.info-row {
+			width: 80%;
+
+			.info-row-image {
+				height: 200px;
+				width: 200px;
+			}
+		}
+	}
+
 }
 
 
@@ -233,19 +398,6 @@ h1, h2, h3, h4, a{
 	h2 {
 		padding-top: 50px;
 		color: $white;
-	}
-
-	h2:after {
-	    content: '';
-	    position: absolute;
-	    bottom: -1374px;
-	    left: 50%;
-	    -webkit-transform: translateX(-50%);
-	    -ms-transform: translateX(-50%);
-	    transform: translateX(-50%);
-	    width: 30px;
-	    height: 3px;
-	    background: $white;
 	}
 
 	.pricing-row {
@@ -308,6 +460,27 @@ h1, h2, h3, h4, a{
 				background-image: url("gfx/frontfill-pro.svg");
 				background-size: contain;
 				background-repeat: no-repeat;
+			}
+		}
+	}
+
+	@media screen and (max-width: 600px) { 
+		.pricing-row {
+			flex-direction: column;
+			padding-top: 10px;
+
+			.pricing-row-divider {
+				display: none;
+			}
+
+			.pricing-row-left, .pricing-row-right {
+				margin: 0 auto;
+			}
+
+			.pricing-row-right {
+				border-top: 2px solid $white;
+				padding-top: 40px;
+				margin-top: 30px;
 			}
 		}
 	}

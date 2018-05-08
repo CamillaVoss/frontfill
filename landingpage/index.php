@@ -15,8 +15,8 @@
         	</div>
             <div class="navigation-right">
             	<ul>
-	             	<li><a href="#">How it works</a></li>
-	             	<li><a href="#">Pricing</a></li>
+	             	<li><a href="#info-point">How it works</a></li>
+	             	<li><a href="#price-point">Pricing</a></li>
 	             	<li><a href="#" class="CTA-btn">Try it now!</a></li>
 	            </ul>
             </div>
@@ -33,7 +33,7 @@
         	</div>
         </div>
 
-        <div class="info">
+        <div class="info" id="info-point">
         	<h2>How It Works</h2>
         	<div class="info-row">
         		<div class="info-row-left">
@@ -45,12 +45,12 @@
         		</div>
         	</div>
         	<div class="info-row">
+        		<div class="info-row-right">
+        			<div class="info-row-image step-2"></div>
+        		</div>
         		<div class="info-row-left">
         			<h3>Your developer takes over</h3>
         			<p>Your developer will use our API to implement all the dynamic fields needed on your website. This only needs to be done a single time in order to give you control of your site!</p>
-        		</div>
-        		<div class="info-row-right">
-        			<div class="info-row-image step-2"></div>
         		</div>
         	</div>
         	<div class="info-row">
@@ -64,7 +64,7 @@
         	</div>
         </div>
 
-        <div class="pricing">
+        <div class="pricing" id="price-point">
         	<h2>Pricing</h2>
         	<div class="pricing-row">
         		<div class="pricing-row-left">
