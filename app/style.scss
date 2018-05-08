@@ -1,6 +1,7 @@
 //////////////////////////
 //     VARIABELS        //
 //////////////////////////
+
 $font-stack:   'Roboto', Helvetica, sans-serif;
 
 $light-blue: #00A5CF;
@@ -15,13 +16,40 @@ $grey: #E0E0E0;
 //////////////////////////
 //     General          //
 //////////////////////////
+
 body {
-	margin: 0;
-	padding: 0;
+	margin: 0 0;
+	padding: 0 0;
 }
+
+h1, h2, h3, h4, p, a {
+	font-family: $font-stack;
+	padding: 0; 
+	margin: 0;
+}
+
+h1, h2, h3, h4, a{
+	font-weight: 300;
+}
+
+.CTA-btn {
+	color: $white; 
+	text-decoration: none;
+	font-size: 24px;
+	border: solid 1px $white;
+	border-radius: 10px;
+	padding: 5px 10px;
+	background-color: Transparent;
+	font-weight: 300;
+	font-family: $font-stack;
+	width: 150px;
+}
+
+
 //////////////////////////
 //   Sign-up & sign-in  //
 //////////////////////////
+
 .full-size {
 	width: 100%;
 	height: 100vh;
@@ -29,4 +57,88 @@ body {
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
+	color: $white;
+
+	.content {
+		width: 500px;
+		margin: 0 auto;
+		padding-top: 150px;
+
+		.content-image {
+			margin: 0 auto;
+			height: 83px;
+    		width: 300px;
+			background-image: url("gfx/logo-hvid.svg");
+			background-size: contain;
+			background-repeat: no-repeat;
+			background-position: center;
+		}
+
+		.form {
+			width: 100%;
+			margin: 0 auto;
+			text-align: center;
+			padding-top: 40px;
+			
+			h1 {
+				padding-bottom: 20px;
+			}
+
+			input{
+				padding: 15px;
+				margin-top: 5px;
+				width: 300px;
+				border: none;
+				font-family: $font-stack;
+				font-size: 14px;
+			}
+
+			input[type="email"] {
+				border-top-left-radius: 5px;
+				border-top-right-radius: 5px;
+			}
+
+			input[type="password"] {
+				border-bottom-left-radius: 5px;
+				border-bottom-right-radius: 5px;
+			}
+
+			.CTA-btn {
+				margin: 20px 0;
+			}
+
+			p {
+				font-weight: 300;
+
+				a {
+					text-decoration: none;
+					color: $white;
+					font-weight: 400;
+				}
+
+				a:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	@media screen and (max-width: 501px) { 
+		.content {
+			width: 80%;
+			padding-top: 100px;
+
+			.content-image {
+				width: 250px;
+				height: 68px;
+			}
+
+			.form {
+
+				input {
+					width: 220px;
+				}
+			}
+		}
+	}
 }

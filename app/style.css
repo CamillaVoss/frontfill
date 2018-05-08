@@ -1,6 +1,26 @@
 body {
-  margin: 0;
-  padding: 0; }
+  margin: 0 0;
+  padding: 0 0; }
+
+h1, h2, h3, h4, p, a {
+  font-family: "Roboto", Helvetica, sans-serif;
+  padding: 0;
+  margin: 0; }
+
+h1, h2, h3, h4, a {
+  font-weight: 300; }
+
+.CTA-btn {
+  color: #FFFFFF;
+  text-decoration: none;
+  font-size: 24px;
+  border: solid 1px #FFFFFF;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: Transparent;
+  font-weight: 300;
+  font-family: "Roboto", Helvetica, sans-serif;
+  width: 150px; }
 
 .full-size {
   width: 100%;
@@ -8,4 +28,56 @@ body {
   background-image: url("gfx/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center; }
+  background-position: center;
+  color: #FFFFFF; }
+  .full-size .content {
+    width: 500px;
+    margin: 0 auto;
+    padding-top: 150px; }
+    .full-size .content .content-image {
+      margin: 0 auto;
+      height: 83px;
+      width: 300px;
+      background-image: url("gfx/logo-hvid.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center; }
+    .full-size .content .form {
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      padding-top: 40px; }
+      .full-size .content .form h1 {
+        padding-bottom: 20px; }
+      .full-size .content .form input {
+        padding: 15px;
+        margin-top: 5px;
+        width: 300px;
+        border: none;
+        font-family: "Roboto", Helvetica, sans-serif;
+        font-size: 14px; }
+      .full-size .content .form input[type="email"] {
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px; }
+      .full-size .content .form input[type="password"] {
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px; }
+      .full-size .content .form .CTA-btn {
+        margin: 20px 0; }
+      .full-size .content .form p {
+        font-weight: 300; }
+        .full-size .content .form p a {
+          text-decoration: none;
+          color: #FFFFFF;
+          font-weight: 400; }
+        .full-size .content .form p a:hover {
+          text-decoration: underline; }
+  @media screen and (max-width: 501px) {
+    .full-size .content {
+      width: 80%;
+      padding-top: 100px; }
+      .full-size .content .content-image {
+        width: 250px;
+        height: 68px; }
+      .full-size .content .form input {
+        width: 220px; } }
