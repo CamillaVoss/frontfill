@@ -17,11 +17,11 @@
 						<h1>Create new user</h1>
 
 						<div class="form-group">
-		                	<input type="email" name="email" class="form-input" placeholder="Email" required>
+		                	<input type="email" name="email" placeholder="Email" required>
 		                </div>
 
 		                <div class="form-group">
-		                	<input type="password" name="password" class="form-input" placeholder="Password" required>
+		                	<input type="password" name="password" placeholder="Password" required>
 		                </div>
 
 						<button type="submit" name="signup" value="signup" class="CTA-btn">Sign up</button>

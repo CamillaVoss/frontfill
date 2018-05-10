@@ -45,6 +45,10 @@ h1, h2, h3, h4, a{
 	width: 150px;
 }
 
+button {
+    cursor:pointer;
+}
+
 
 //////////////////////////
 //   Sign-up & sign-in  //
@@ -175,9 +179,11 @@ h1, h2, h3, h4, a{
 				float: left;
 				background-color: Transparent;
 				border: none; 
-				line-height: 80px;
-				position: absolute;
+				line-height: 60px;
+   				margin-top: 10px;
+   				position: absolute;
 				margin-left: 20px;
+				z-index: 2;
 
 			}
 
@@ -189,6 +195,7 @@ h1, h2, h3, h4, a{
 				font-size: 20px;
 				overflow: hidden;
 				line-height: 60px;
+				z-index: 1;
 			}
 		}
 
@@ -235,12 +242,86 @@ h1, h2, h3, h4, a{
 				}
 			}
 		}
+
+		.items {
+			padding-top: 150px;
+    		text-align: center;
+
+			.item {
+				background-color: $white;
+				width: 80%;
+				margin: 0 auto;
+				box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
+				border-radius: 5px;
+
+				.filled {
+					background-color: $aqua-blue;
+					border: solid 1px $aqua-blue;
+				}
+
+				.outlined {
+					border: solid 1px $aqua-blue;
+					color: $aqua-blue;
+				}
+
+				.CTA-btn {
+					margin: 20px 10px 30px 10px;
+				}
+				
+				.item-top {
+					overflow: hidden;
+					padding-top: 20px;
+
+					.delete {
+						background-color: Transparent; 
+						border: none;
+						float: right;
+						margin: 25px 20px 10px 10px;
+					}
+
+					.item-title {
+						float: left;
+						margin: 20px;
+						padding: 15px;
+						width: 75%;
+						border: solid 1px $grey;
+						font-family: $font-stack;
+						font-size: 14px;
+						background-color: $light-grey;
+						border-radius: 2px;
+					}
+				}
+
+				.item-content {
+					margin: 10px 20px;
+					padding: 15px;
+					width: 90%;
+					border: solid 1px $grey;
+					font-family: $font-stack;
+					font-size: 14px;
+					background-color: $light-grey;
+					border-radius: 2px;
+					float: left;
+				}
+			}
+		}
+	}
+
+	.new-item {
+		padding-top: 30px;
+		text-align: center;
+
+		.filled {
+			background-color: $aqua-blue;
+			border: solid 1px $aqua-blue;
+		}
 	}
 }
 
 
+
 //////////////////////////
-//      Dashboard       //
+//     Documentation    //
 //////////////////////////
 
 .sidebar {

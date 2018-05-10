@@ -22,6 +22,9 @@ h1, h2, h3, h4, a {
   font-family: "Roboto", Helvetica, sans-serif;
   width: 150px; }
 
+button {
+  cursor: pointer; }
+
 .full-size {
   width: 100%;
   height: 100vh;
@@ -108,9 +111,11 @@ h1, h2, h3, h4, a {
         float: left;
         background-color: Transparent;
         border: none;
-        line-height: 80px;
+        line-height: 60px;
+        margin-top: 10px;
         position: absolute;
-        margin-left: 20px; }
+        margin-left: 20px;
+        z-index: 2; }
       .dashboard .sidebar .section h4 {
         position: relative;
         margin: 0 auto;
@@ -118,7 +123,8 @@ h1, h2, h3, h4, a {
         color: #FFFFFF;
         font-size: 20px;
         overflow: hidden;
-        line-height: 60px; }
+        line-height: 60px;
+        z-index: 1; }
     .dashboard .sidebar .divider {
       height: 3px;
       background: #343838;
@@ -156,6 +162,58 @@ h1, h2, h3, h4, a {
               color: #004E64;
               text-decoration: none;
               font-size: 24px; }
+    .dashboard .content .items {
+      padding-top: 150px;
+      text-align: center; }
+      .dashboard .content .items .item {
+        background-color: #FFFFFF;
+        width: 80%;
+        margin: 0 auto;
+        -webkit-box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5);
+        box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5);
+        border-radius: 5px; }
+        .dashboard .content .items .item .filled {
+          background-color: #004E64;
+          border: solid 1px #004E64; }
+        .dashboard .content .items .item .outlined {
+          border: solid 1px #004E64;
+          color: #004E64; }
+        .dashboard .content .items .item .CTA-btn {
+          margin: 20px 10px 30px 10px; }
+        .dashboard .content .items .item .item-top {
+          overflow: hidden;
+          padding-top: 20px; }
+          .dashboard .content .items .item .item-top .delete {
+            background-color: Transparent;
+            border: none;
+            float: right;
+            margin: 25px 20px 10px 10px; }
+          .dashboard .content .items .item .item-top .item-title {
+            float: left;
+            margin: 20px;
+            padding: 15px;
+            width: 75%;
+            border: solid 1px #E0E0E0;
+            font-family: "Roboto", Helvetica, sans-serif;
+            font-size: 14px;
+            background-color: #F2F2F2;
+            border-radius: 2px; }
+        .dashboard .content .items .item .item-content {
+          margin: 10px 20px;
+          padding: 15px;
+          width: 90%;
+          border: solid 1px #E0E0E0;
+          font-family: "Roboto", Helvetica, sans-serif;
+          font-size: 14px;
+          background-color: #F2F2F2;
+          border-radius: 2px;
+          float: left; }
+  .dashboard .new-item {
+    padding-top: 30px;
+    text-align: center; }
+    .dashboard .new-item .filled {
+      background-color: #004E64;
+      border: solid 1px #004E64; }
 
 .sidebar .TOC {
   padding-top: 10px;
