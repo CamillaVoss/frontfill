@@ -154,13 +154,17 @@ button {
 
 .dashboard {
 	width: 100%;
-	height: 100vh;
+	min-height: 100vh;
 	display: flex;
 
 	.sidebar {
 		background-color: $dark-grey;
 		flex-grow: 0;
 		min-width: 250px;
+	    position: fixed;
+	    top: 0;
+	    bottom: 0;
+	    z-index: 1;
 
 		.sidebar-logo {
 			height: 35px;
@@ -242,7 +246,8 @@ button {
 
 			.navigation-right {	
 				float: right;
-				width: 56%;	
+    			text-align: right;
+
 				ul {
 					list-style: none;
 
@@ -262,6 +267,7 @@ button {
 
 		.content-area {
 			padding-top: 150px;
+			margin-left: 250px;
 
 			.items {
 	    		text-align: center;
@@ -272,6 +278,7 @@ button {
 					margin: 0 auto;
 					box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
 					border-radius: 5px;
+					margin-bottom: 50px;
 
 					.filled {
 						background-color: $aqua-blue;
@@ -332,8 +339,8 @@ button {
 	}
 
 	.new-item {
-		padding-top: 30px;
 		text-align: center;
+		margin-bottom: 50px;
 
 		.filled {
 			background-color: $aqua-blue;
@@ -368,6 +375,7 @@ button {
 		.documentation-text {
 			padding: 150px 60px 0 60px;
 			color: $dark-grey;
+			margin-left: 250px;
 
 			h1 {
 				padding-bottom: 20px;

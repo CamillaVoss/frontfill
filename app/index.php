@@ -3,6 +3,19 @@
 
 	if (empty($_SESSION['userID'])) {
 		header("Location: signin.php");
+	} elseif (empty($_SERVER['QUERY_STRING'])) {
+		$userID = $_SESSION['userID'];
+
+		require_once('include/db_con.php');
+		$sql = 'SELECT sectionID FROM sections WHERE users_userID = ? LIMIT 1';
+		$stmt = $con->prepare($sql);
+		$stmt->bind_param('i', $userID);
+		$stmt->execute();
+		$stmt->bind_result($sectionID);
+		$stmt->fetch();
+		
+		header("Location: index.php?sectionID=".$sectionID);
+		die('');
 	}
 
 	$secID = filter_input(INPUT_GET, 'sectionID', FILTER_VALIDATE_INT);
@@ -32,6 +45,7 @@
         		<div class="divider"></div>
         		<?php
         			if (!empty($_SESSION['userID'])) {
+        				$count = 0;
 						$userID = $_SESSION['userID'];
 
 						require_once('include/db_con.php');
@@ -47,7 +61,7 @@
 			        				<button type="submit" name="deleteSection" value="deleteSection"  title="Add section"><img src="gfx/trashcan.svg" alt="Delete"></button>
 			        				<input name="sectionID" value="<?=$sectionID?>" hidden>
 			    				</form>
-			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?></a></h4>
+			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?> <?php echo ++$count; ?></a></h4>
 			        		</div>
 			        		<div class="divider"></div>
 				<?php
@@ -70,11 +84,14 @@
 		        <div class="content-area">				
 					<?php
 						if (!empty($sections)) {
-	        		?>
-	        		<div class="new-item">
-	        			<button name="add-item" value="add-item" class="CTA-btn filled">Add new item</button>
-	        		</div> 
-					<?php
+							include 'include/item.php';
+			        		?>
+			        		<div class="new-item">
+			        			<form action="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>" method="POST">
+			        				<button type="submit" name="addItem" value="addItem" class="CTA-btn filled">Add new item</button>
+			        			</form>	
+			        		</div> 
+							<?php
 						}
 	        		?>
         		</div>

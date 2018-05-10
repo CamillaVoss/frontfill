@@ -106,4 +106,34 @@ if (filter_input(INPUT_POST, 'deleteSection')) {
 	$stmt->execute();
 }
 
+
+//////////////////////////
+//      Add Item        //
+//////////////////////////
+
+if (filter_input(INPUT_POST, 'addItem')) { 
+
+	$sectionID = $_GET['sectionID'];
+	$type = 0;
+	$numbOfCol = 1;
+
+	$row = 1;
+	$col = 1;
+
+	require_once('db_con.php');
+	$sql = 'INSERT INTO items (sections_sectionID, type, numbOfCol) VALUES (?, ?, ?)';
+	$stmt = $con->prepare($sql);
+	$stmt->bind_param('iii', $sectionID, $type, $numbOfCol);
+	$stmt->execute();
+
+	$itemID = $stmt->insert_id;
+
+	$sql = 'INSERT INTO fields (row, col, items_itemID) VALUES (?, ?, ?)';
+	$stmt = $con->prepare($sql);
+	$stmt->bind_param('iii', $row, $col, $itemID);
+	$stmt->execute();
+}
+
+
+
 ?>
