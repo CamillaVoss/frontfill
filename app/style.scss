@@ -196,6 +196,22 @@ button {
 				overflow: hidden;
 				line-height: 60px;
 				z-index: 1;
+
+				a {
+					text-decoration: none;
+					color: $white;
+				} 
+
+				.active {
+					color: $light-blue;
+				}
+			}
+		}
+
+		.delete-section {
+			button {
+				margin-top: 5px;
+    			margin-left: 25px;
 			}
 		}
 
@@ -238,73 +254,81 @@ button {
 							text-decoration: none;
 							font-size: 24px;
 						}
+
 					}
 				}
 			}
 		}
 
-		.items {
+		.content-area {
 			padding-top: 150px;
-    		text-align: center;
 
-			.item {
-				background-color: $white;
-				width: 80%;
-				margin: 0 auto;
-				box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
-				border-radius: 5px;
+			.items {
+	    		text-align: center;
 
-				.filled {
-					background-color: $aqua-blue;
-					border: solid 1px $aqua-blue;
-				}
+				.item {
+					background-color: $white;
+					width: 80%;
+					margin: 0 auto;
+					box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
+					border-radius: 5px;
 
-				.outlined {
-					border: solid 1px $aqua-blue;
-					color: $aqua-blue;
-				}
-
-				.CTA-btn {
-					margin: 20px 10px 30px 10px;
-				}
-				
-				.item-top {
-					overflow: hidden;
-					padding-top: 20px;
-
-					.delete {
-						background-color: Transparent; 
-						border: none;
-						float: right;
-						margin: 25px 20px 10px 10px;
+					.filled {
+						background-color: $aqua-blue;
+						border: solid 1px $aqua-blue;
 					}
 
-					.item-title {
-						float: left;
-						margin: 20px;
+					.outlined {
+						border: solid 1px $aqua-blue;
+						color: $aqua-blue;
+					}
+
+					.CTA-btn {
+						margin: 20px 10px 30px 10px;
+					}
+					
+					.item-top {
+						overflow: hidden;
+						padding-top: 20px;
+
+						.delete {
+							background-color: Transparent; 
+							border: none;
+							float: right;
+							margin: 25px 20px 10px 10px;
+						}
+
+						.item-title {
+							float: left;
+							margin: 20px;
+							padding: 15px;
+							width: 75%;
+							border: solid 1px $grey;
+							font-family: $font-stack;
+							font-size: 14px;
+							background-color: $light-grey;
+							border-radius: 2px;
+						}
+					}
+
+					.item-content {
+						margin: 10px 20px;
 						padding: 15px;
-						width: 75%;
+						width: 90%;
 						border: solid 1px $grey;
 						font-family: $font-stack;
 						font-size: 14px;
 						background-color: $light-grey;
 						border-radius: 2px;
+						float: left;
 					}
-				}
-
-				.item-content {
-					margin: 10px 20px;
-					padding: 15px;
-					width: 90%;
-					border: solid 1px $grey;
-					font-family: $font-stack;
-					font-size: 14px;
-					background-color: $light-grey;
-					border-radius: 2px;
-					float: left;
 				}
 			}
 		}
+	}
+
+	.not-empty {
+		background-image: none;
 	}
 
 	.new-item {
@@ -314,6 +338,8 @@ button {
 		.filled {
 			background-color: $aqua-blue;
 			border: solid 1px $aqua-blue;
+			padding: 7px 10px;
+			width: 200px;
 		}
 	}
 }

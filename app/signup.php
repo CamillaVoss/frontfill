@@ -1,3 +1,7 @@
+<?php 
+	include 'include/db_functions.php';
+?>
+
 <!doctype html>
 <html>
     <head>

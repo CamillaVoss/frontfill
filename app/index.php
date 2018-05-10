@@ -1,3 +1,13 @@
+<?php 
+	include 'include/db_functions.php';
+
+	if (empty($_SESSION['userID'])) {
+		header("Location: signin.php");
+	}
+
+	$secID = filter_input(INPUT_GET, 'sectionID', FILTER_VALIDATE_INT);
+?>
+
 <!doctype html>
 <html>
     <head>
@@ -14,47 +24,59 @@
         		<div class="sidebar-logo"></div>
         		<div class="divider"></div>
         		<div class="section add-section">
-        			<button title="Add section"><img src="gfx/add.svg" alt="Add"></button>
+        			<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
+        				<button type="submit" name="addSection" value="addSection"  title="Add section"><img src="gfx/add.svg" alt="Add"></button>
+    				</form>
         			<h4>Sections</h4>
         		</div>
         		<div class="divider"></div>
+        		<?php
+        			if (!empty($_SESSION['userID'])) {
+						$userID = $_SESSION['userID'];
+
+						require_once('include/db_con.php');
+						$sql = 'SELECT title, sectionID FROM sections WHERE users_userID = ?';
+						$stmt = $con->prepare($sql);
+						$stmt->bind_param('i', $userID);
+						$stmt->execute();
+						$stmt->bind_result($title, $sectionID);
+						$sections = $stmt;
+						while ($stmt->fetch()) { ?>
+							<div class="section delete-section">
+			        			<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
+			        				<button type="submit" name="deleteSection" value="deleteSection"  title="Add section"><img src="gfx/trashcan.svg" alt="Delete"></button>
+			        				<input name="sectionID" value="<?=$sectionID?>" hidden>
+			    				</form>
+			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?></a></h4>
+			        		</div>
+			        		<div class="divider"></div>
+				<?php
+						}
+					}
+        		?>
         	</div>
 
-        	<div class="content">
+        	<div class="content <?php if (!empty($sections)) {echo 'not-empty';}; ?>">
         		<nav class="navigation">
 		        	<div class="navigation-right">
 		            	<ul>
 			             	<li><a href="#">API Key</a></li>
 			             	<li><a href="#">Documentaion</a></li>
-			             	<li><a href="#">Sign Out</a></li>
+			             	<li><a href="include/signout.php">Sign Out</a></li>
 			            </ul>
 		            </div>
 		        </nav>
-				
-				<div class="items">
-			        <div class="item">
-			        	<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-	                        <div class="item-top">
-	                            <input name="title"  placeholder="Title (must be unique)" class="item-title" required>
 
-		                        <button title="Delete" type="submit" name="delete" value="delete" class="delete"><img src="gfx/trashcan-black.svg" alt="trash can"></button>
-							</div>
-
-							<div>
-	                            <textarea placeholder="Write your content here.." class="item-content"></textarea>
-							</div>
-							
-							<div>
-	                        	<button type="submit" name="save" value="save" class="CTA-btn filled">Save</button>
-
-	                        	<button type="submit" name="cancel" value="cancel" class="CTA-btn outlined">Cancel</button>
-	                        </div>
-                    	</form> 
-		        	</div>
-        		</div>
-
-        		<div class="new-item">
-        			<button name="add-item" value="add-item" class="CTA-btn filled">Add new</button>
+		        <div class="content-area">				
+					<?php
+						if (!empty($sections)) {
+	        		?>
+	        		<div class="new-item">
+	        			<button name="add-item" value="add-item" class="CTA-btn filled">Add new item</button>
+	        		</div> 
+					<?php
+						}
+	        		?>
         		</div>
         	</div>
     	</div>
