@@ -17,7 +17,7 @@
             	<ul>
 	             	<li><a href="#info-point">How it works</a></li>
 	             	<li><a href="#price-point">Pricing</a></li>
-	             	<li><a href="#" class="CTA-btn">Try it now!</a></li>
+	             	<li><a href="#"><button class="CTA-btn">Try it now!</button></a></li>
 	            </ul>
             </div>
         </nav>
@@ -26,7 +26,7 @@
         	<div class="hero-left">
         		<h1>It is time to make your <strong>static</strong> site <i>dynamic</i>!</h1>
         		<h3>Spare the hassle of content management systems, and blah blah</h3>
-        		<a href="#" class="CTA-btn">Try it now!</a>
+        		<a href="#"><button class="CTA-btn">Try it now!</button></a>
         	</div>
         	<div class="hero-right">
         		<div class="hero-right-image"></div>
@@ -77,7 +77,7 @@
         			    <li>Userfriendly interface</li>
         			</ul>
         			<div class="pricing-row-CTA">
-        				<a href="#" class="CTA-btn">Try it now!</a>
+        				<a href="#"><button class="CTA-btn">Try it now!</button></a>
 						<p>at $ xx/month</p>
         			</div>
         		</div>
@@ -92,7 +92,7 @@
         			    <li>Userfriendly interface</li>
         			</ul>
         			<div class="pricing-row-CTA">
-        				<a href="#" class="CTA-btn">Try it now!</a>
+        				<a href="#"><button class="CTA-btn">Try it now!</button></a>
 						<p>at $ xx/month</p>
         			</div>
         		</div>

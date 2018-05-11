@@ -65,8 +65,21 @@ button {
       .full-size .content .form input[type="password"] {
         border-bottom-left-radius: 5px;
         border-bottom-right-radius: 5px; }
+      .full-size .content .form .login-error {
+        padding-top: 10px; }
+        .full-size .content .form .login-error p {
+          color: red; }
       .full-size .content .form .CTA-btn {
-        margin: 20px 0; }
+        margin: 20px 0;
+        -webkit-transition: -webkit-transform .2s;
+        transition: -webkit-transform .2s;
+        -o-transition: transform .2s;
+        transition: transform .2s;
+        transition: transform .2s, -webkit-transform .2s; }
+      .full-size .content .form .CTA-btn:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2); }
       .full-size .content .form p {
         font-weight: 300; }
         .full-size .content .form p a {
@@ -115,11 +128,19 @@ button {
         float: left;
         background-color: Transparent;
         border: none;
-        line-height: 60px;
-        margin-top: 10px;
+        margin-top: 15px;
         position: absolute;
         margin-left: 20px;
-        z-index: 2; }
+        z-index: 2;
+        -webkit-transition: -webkit-transform .2s;
+        transition: -webkit-transform .2s;
+        -o-transition: transform .2s;
+        transition: transform .2s;
+        transition: transform .2s, -webkit-transform .2s; }
+      .dashboard .sidebar .section button:hover {
+        -webkit-transform: scale(1.2);
+        -ms-transform: scale(1.2);
+        transform: scale(1.2); }
       .dashboard .sidebar .section h4 {
         position: relative;
         margin: 0 auto;
@@ -131,11 +152,16 @@ button {
         z-index: 1; }
         .dashboard .sidebar .section h4 a {
           text-decoration: none;
-          color: #FFFFFF; }
+          color: #FFFFFF;
+          -webkit-transition: font-size .3s;
+          -o-transition: font-size .3s;
+          transition: font-size .3s; }
+        .dashboard .sidebar .section h4 a:hover {
+          font-size: 24px; }
         .dashboard .sidebar .section h4 .active {
           color: #00A5CF; }
     .dashboard .sidebar .delete-section button {
-      margin-top: 5px;
+      margin-top: 15px;
       margin-left: 25px; }
     .dashboard .sidebar .divider {
       height: 3px;
@@ -146,7 +172,7 @@ button {
     background-color: #F2F2F2;
     width: 100%;
     background-image: url("gfx/bg-image.svg");
-    background-size: 50%;
+    background-size: 40%;
     background-repeat: no-repeat;
     background-position: center;
     -webkit-box-flex: 5;
@@ -174,9 +200,29 @@ button {
               color: #004E64;
               text-decoration: none;
               font-size: 24px; }
+            .dashboard .content .navigation .navigation-right ul li a:hover {
+              text-decoration: underline; }
     .dashboard .content .content-area {
       padding-top: 150px;
       margin-left: 250px; }
+      .dashboard .content .content-area .alert {
+        text-align: center;
+        width: calc(100% - 250px);
+        position: Absolute;
+        margin-top: -65px;
+        padding: 15px 0; }
+      .dashboard .content .content-area .green {
+        color: #3c763d;
+        background-color: #dff0d8;
+        border: solid 1px #d6e9c6; }
+      .dashboard .content .content-area .red {
+        color: #a94442;
+        background-color: #f2dede;
+        border: solid 1px #ebccd1; }
+      .dashboard .content .content-area .blue {
+        color: #31708f;
+        background-color: #d9edf7;
+        border: solid 1px #bce8f1; }
       .dashboard .content .content-area .items {
         text-align: center; }
         .dashboard .content .content-area .items .item {
@@ -194,7 +240,16 @@ button {
             border: solid 1px #004E64;
             color: #004E64; }
           .dashboard .content .content-area .items .item .CTA-btn {
-            margin: 20px 10px 30px 10px; }
+            margin: 20px 10px 30px 10px;
+            -webkit-transition: -webkit-transform .3s;
+            transition: -webkit-transform .3s;
+            -o-transition: transform .3s;
+            transition: transform .3s;
+            transition: transform .3s, -webkit-transform .3s; }
+          .dashboard .content .content-area .items .item .CTA-btn:hover {
+            -webkit-transform: scale(1.2);
+            -ms-transform: scale(1.2);
+            transform: scale(1.2); }
           .dashboard .content .content-area .items .item .item-top {
             overflow: hidden;
             padding-top: 20px; }
@@ -202,7 +257,16 @@ button {
               background-color: Transparent;
               border: none;
               float: right;
-              margin: 25px 20px 10px 10px; }
+              margin: 25px 20px 10px 10px;
+              -webkit-transition: -webkit-transform .3s;
+              transition: -webkit-transform .3s;
+              -o-transition: transform .3s;
+              transition: transform .3s;
+              transition: transform .3s, -webkit-transform .3s; }
+            .dashboard .content .content-area .items .item .item-top .delete:hover {
+              -webkit-transform: scale(1.2);
+              -ms-transform: scale(1.2);
+              transform: scale(1.2); }
             .dashboard .content .content-area .items .item .item-top .item-title {
               float: left;
               margin: 20px;
@@ -232,7 +296,16 @@ button {
       background-color: #004E64;
       border: solid 1px #004E64;
       padding: 7px 10px;
-      width: 200px; }
+      width: 200px;
+      -webkit-transition: -webkit-transform .3s;
+      transition: -webkit-transform .3s;
+      -o-transition: transform .3s;
+      transition: transform .3s;
+      transition: transform .3s, -webkit-transform .3s; }
+    .dashboard .new-item .filled:hover {
+      -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+      transform: scale(1.2); }
 
 .sidebar .TOC {
   padding-top: 10px;

@@ -17,22 +17,22 @@
 
         while ($stmt->fetch()) { ?>            
                 <div class="item">
-                    <form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
+                    <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST">
                         <div class="item-top">
-                            <input name="title"  placeholder="<?php if (!empty($title)) {echo $title;}; ?>Title (must be unique)" class="item-title" required>
+                            <input name="title"  placeholder="<?php if (empty($title)) {echo 'Title (Must be unique within section)';}; ?>" <?php if (!empty($title)) {echo htmlspecialchars("value='".$title."'");};?> class="item-title">
 
-                            <button title="Delete" type="submit" name="delete" value="delete" class="delete"><img src="gfx/trashcan-black.svg" alt="trash can"></button>
-                            <input name="sectionID" value="<?=$sectionID?>" hidden>
+                            <button type="submit" name="deleteItem" value="deleteItem"  title="Delete Item" class="delete"><img src="gfx/trashcan-black.svg" alt="Delete"></button>
+                            <input name="itemID" value="<?=$itemID?>" hidden>
                         </div>
 
                         <div>
-                            <textarea placeholder="<?php if (!empty($title)) {echo $title;}; ?>Write your content here.." class="item-content"></textarea>
+                            <textarea name="content" placeholder="<?php if (empty($content)) {echo 'Write your content here';}; ?>"  class="item-content"><?php if (!empty($content)) {echo htmlspecialchars($content);};?></textarea>
                         </div>
                         
                         <div>
-                            <button type="submit" name="save" value="save" class="CTA-btn filled">Save</button>
+                            <button type="submit" name="saveItem" value="saveItem" class="CTA-btn filled">Save</button>
 
-                            <button type="submit" name="cancel" value="cancel" class="CTA-btn outlined">Cancel</button>
+                            <a href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>"><button type="submit" name="cancel" value="cancel" class="CTA-btn outlined">Cancel</button></a>
                         </div>
                     </form> 
                 </div>

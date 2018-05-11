@@ -37,7 +37,7 @@
         		<div class="sidebar-logo"></div>
         		<div class="divider"></div>
         		<div class="section add-section">
-        			<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
+        			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
         				<button type="submit" name="addSection" value="addSection"  title="Add section"><img src="gfx/add.svg" alt="Add"></button>
     				</form>
         			<h4>Sections</h4>
@@ -54,11 +54,12 @@
 						$stmt->bind_param('i', $userID);
 						$stmt->execute();
 						$stmt->bind_result($title, $sectionID);
-						$sections = $stmt;
-						while ($stmt->fetch()) { ?>
+						$sections = array();
+						while ($stmt->fetch()) { 
+							array_push($sections, $sectionID);?>
 							<div class="section delete-section">
-			        			<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
-			        				<button type="submit" name="deleteSection" value="deleteSection"  title="Add section"><img src="gfx/trashcan.svg" alt="Delete"></button>
+			        			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
+			        				<button type="submit" name="deleteSection" value="deleteSection"  title="Delete section"><img src="gfx/trashcan.svg" alt="Delete"></button>
 			        				<input name="sectionID" value="<?=$sectionID?>" hidden>
 			    				</form>
 			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?> <?php echo ++$count; ?></a></h4>
@@ -75,19 +76,20 @@
 		        	<div class="navigation-right">
 		            	<ul>
 			             	<li><a href="#">API Key</a></li>
-			             	<li><a href="#">Documentaion</a></li>
+			             	<li><a href="documentation.php">Documentaion</a></li>
 			             	<li><a href="include/signout.php">Sign Out</a></li>
 			            </ul>
 		            </div>
 		        </nav>
 
-		        <div class="content-area">				
+		        <div class="content-area">	
+		        	<?php include 'include/alerts.php';?>	
 					<?php
 						if (!empty($sections)) {
 							include 'include/item.php';
 			        		?>
 			        		<div class="new-item">
-			        			<form action="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>" method="POST">
+			        			<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST">
 			        				<button type="submit" name="addItem" value="addItem" class="CTA-btn filled">Add new item</button>
 			        			</form>	
 			        		</div> 
@@ -97,5 +99,8 @@
         		</div>
         	</div>
     	</div>
+
+		<?php include 'include/scripts.php';?>
+
     </body>
 </html>

@@ -39,6 +39,15 @@ h1, h2, h3, h4, a{
 	border: solid 1px $white;
 	border-radius: 10px;
 	padding: 5px 10px;
+	background-color: Transparent;
+	font-weight: 300;
+	font-family: $font-stack;
+	width: 150px;
+	transition: transform .2s;
+}
+
+.CTA-btn:hover {
+	transform: scale(1.2);
 }
 
 
@@ -77,6 +86,10 @@ h1, h2, h3, h4, a{
 					mix-blend-mode: difference;
 					text-decoration: none;
 					font-size: 24px;
+				}
+
+				a:hover {
+					text-decoration: underline;
 				}
 			}
 		}

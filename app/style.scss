@@ -107,8 +107,20 @@ button {
 				border-bottom-right-radius: 5px;
 			}
 
+			.login-error {
+				padding-top: 10px;
+				p {
+					color: red;
+				}
+			}
+
 			.CTA-btn {
 				margin: 20px 0;
+				transition: transform .2s;
+			}
+
+			.CTA-btn:hover {
+				transform: scale(1.2);
 			}
 
 			p {
@@ -183,13 +195,17 @@ button {
 				float: left;
 				background-color: Transparent;
 				border: none; 
-				line-height: 60px;
-   				margin-top: 10px;
+   				margin-top: 15px;
    				position: absolute;
 				margin-left: 20px;
-				z-index: 2;
+				z-index: 2;				
+				transition: transform .2s;
 
 			}
+
+			button:hover {
+				transform: scale(1.2);
+			} 
 
 			h4 {
 				position: relative;
@@ -204,7 +220,12 @@ button {
 				a {
 					text-decoration: none;
 					color: $white;
+					transition: font-size .3s;
 				} 
+
+				a:hover {
+					font-size: 24px;
+				}
 
 				.active {
 					color: $light-blue;
@@ -214,7 +235,7 @@ button {
 
 		.delete-section {
 			button {
-				margin-top: 5px;
+				margin-top: 15px;
     			margin-left: 25px;
 			}
 		}
@@ -230,7 +251,7 @@ button {
 		background-color: $light-grey;
 		width: 100%;
 		background-image: url("gfx/bg-image.svg");
-		background-size: 50%;
+		background-size: 40%;
 		background-repeat: no-repeat;
 		background-position: center;
 		flex-grow: 5;
@@ -260,6 +281,10 @@ button {
 							font-size: 24px;
 						}
 
+						a:hover {
+							text-decoration: underline;
+						}
+
 					}
 				}
 			}
@@ -268,6 +293,32 @@ button {
 		.content-area {
 			padding-top: 150px;
 			margin-left: 250px;
+
+			.alert {
+				text-align: center;
+				width: calc(100% - 250px);
+				position: Absolute;
+				margin-top: -65px;
+				padding: 15px 0;
+			}
+
+			.green {
+				color: #3c763d;
+				background-color: #dff0d8;
+			    border: solid 1px #d6e9c6;	    
+			}
+
+			.red {
+				color: #a94442;
+    			background-color: #f2dede;
+			    border: solid 1px #ebccd1;
+			}
+
+			.blue {
+				color: #31708f;
+   				background-color: #d9edf7;
+			    border: solid 1px #bce8f1;	    
+			}
 
 			.items {
 	    		text-align: center;
@@ -292,6 +343,11 @@ button {
 
 					.CTA-btn {
 						margin: 20px 10px 30px 10px;
+						transition: transform .3s;
+					}
+
+					.CTA-btn:hover {
+						transform: scale(1.2);
 					}
 					
 					.item-top {
@@ -303,6 +359,11 @@ button {
 							border: none;
 							float: right;
 							margin: 25px 20px 10px 10px;
+							transition: transform .3s;
+						}
+
+						.delete:hover {
+							transform: scale(1.2);
 						}
 
 						.item-title {
@@ -347,6 +408,11 @@ button {
 			border: solid 1px $aqua-blue;
 			padding: 7px 10px;
 			width: 200px;
+			transition: transform .3s;
+		}
+
+		.filled:hover {
+			transform: scale(1.2);
 		}
 	}
 }

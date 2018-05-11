@@ -1,5 +1,7 @@
 <?php
 session_start();
+$exists = false;
+$login_failure = false;
 
 //////////////////////////
 //     Sign up          //
@@ -32,6 +34,35 @@ if (filter_input(INPUT_POST, 'signup')) {
 		$stmt->bind_param('ss', $email, $hashed_password);
 		$stmt->execute();
 
+		$userID = $stmt->insert_id;
+
+		do {		
+			$apikey = uniqid();
+
+			$sql = 'SELECT apikey FROM users WHERE apikey = ?';
+			$stmt = $con->prepare($sql);
+			$stmt->bind_param('s', $apikey);
+			$stmt->execute();
+			$stmt->bind_result($newapikey);
+			$apikeys = array();
+			while ($stmt->fetch()) {
+				array_push($apikeys, $newapikey);
+			}
+
+		} while (!empty($apikeys));
+
+		if (!empty($apikeys)) {
+			$apikeys = $newapikey;
+		};
+
+		$sql = 'UPDATE users
+				SET apikey = ?
+				WHERE userID = ?';
+		$stmt = $con->prepare($sql);
+		$stmt->bind_param('si', $apikey, $userID);
+		$stmt->execute();
+
+		$_SESSION['create_succes'] = true;
 		header("Location: signin.php");
 		die();
 	}
@@ -88,6 +119,8 @@ if (filter_input(INPUT_POST, 'addSection')) {
 	$stmt = $con->prepare($sql);
 	$stmt->bind_param('si', $title, $userID);
 	$stmt->execute();
+
+	$_SESSION['add_section'] = true;
 }
 
 
@@ -104,6 +137,8 @@ if (filter_input(INPUT_POST, 'deleteSection')) {
 	$stmt = $con->prepare($sql);
 	$stmt->bind_param('i', $sectionID);
 	$stmt->execute();
+
+	$_SESSION['delete_section'] = true;
 }
 
 
@@ -132,6 +167,90 @@ if (filter_input(INPUT_POST, 'addItem')) {
 	$stmt = $con->prepare($sql);
 	$stmt->bind_param('iii', $row, $col, $itemID);
 	$stmt->execute();
+
+	$_SESSION['add_item'] = true;
+}
+
+
+//////////////////////////
+//    Update Item       //
+//////////////////////////
+
+if (filter_input(INPUT_POST, 'saveItem')) {
+	
+	$itemID = filter_input(INPUT_POST,'itemID');
+	$title = filter_input(INPUT_POST,'title');
+	$content = filter_input(INPUT_POST,'content');
+
+	require_once('db_con.php');
+
+	$con->autocommit(FALSE);
+    $con->begin_transaction();
+
+    $sql = 'UPDATE items
+    		SET title = ?
+    		WHERE itemID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('si', $title, $itemID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('Item update failed');
+    };
+
+    $sql = 'UPDATE fields
+    		SET content = ?
+    		WHERE items_itemID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('si', $content, $itemID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('Item update failed');
+    };
+
+    $con->commit();
+
+    $_SESSION['update_item'] = true;
+}
+
+
+//////////////////////////
+//    Delete Item       //
+//////////////////////////
+
+if (filter_input(INPUT_POST, 'deleteItem')) {
+	
+	$itemID = filter_input(INPUT_POST,'itemID');
+
+	require_once('db_con.php');
+
+	$con->autocommit(FALSE);
+    $con->begin_transaction();
+
+    $sql = 'DELETE FROM fields
+    		WHERE items_itemID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('i', $itemID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('Item delete failed');
+    };
+
+    $sql = 'DELETE FROM items
+    		WHERE itemID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('i', $itemID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('Item delete failed');
+    };
+
+    $con->commit();
+
+    $_SESSION['delete_item'] = true;
 }
 
 

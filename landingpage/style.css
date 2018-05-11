@@ -16,7 +16,21 @@ h1, h2, h3, h4, a {
   font-size: 24px;
   border: solid 1px #FFFFFF;
   border-radius: 10px;
-  padding: 5px 10px; }
+  padding: 5px 10px;
+  background-color: Transparent;
+  font-weight: 300;
+  font-family: "Roboto", Helvetica, sans-serif;
+  width: 150px;
+  -webkit-transition: -webkit-transform .2s;
+  transition: -webkit-transform .2s;
+  -o-transition: transform .2s;
+  transition: transform .2s;
+  transition: transform .2s, -webkit-transform .2s; }
+
+.CTA-btn:hover {
+  -webkit-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  transform: scale(1.2); }
 
 .navigation {
   position: fixed;
@@ -45,6 +59,8 @@ h1, h2, h3, h4, a {
           mix-blend-mode: difference;
           text-decoration: none;
           font-size: 24px; }
+        .navigation .navigation-right ul li a:hover {
+          text-decoration: underline; }
   @media screen and (max-width: 870px) {
     .navigation .navigation-left .navigation-left-img {
       height: 60px;

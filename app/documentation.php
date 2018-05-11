@@ -33,8 +33,8 @@
 		        	<div class="navigation-right">
 		            	<ul>
 			             	<li><a href="#">API Key</a></li>
-			             	<li><a href="#">Dashboard</a></li>
-			             	<li><a href="#">Sign Out</a></li>
+			             	<li><a href="index.php">Dashboard</a></li>
+			             	<li><a href="include/signout.php">Sign Out</a></li>
 			            </ul>
 		            </div>
 		        </nav>
