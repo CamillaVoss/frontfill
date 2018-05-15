@@ -32,7 +32,7 @@
         		<nav class="navigation">
 		        	<div class="navigation-right">
 		            	<ul>
-			             	<li><a href="#">API Key</a></li>
+			             	<li><button class="api-btn">API Key</button></li>
 			             	<li><a href="index.php">Dashboard</a></li>
 			             	<li><a href="include/signout.php">Sign Out</a></li>
 			            </ul>
@@ -50,5 +50,8 @@
                 </div>
         	</div>
         </div>
+
+        <?php include 'include/modals.php'; ?>
+        <?php include 'include/scripts.php';?>
     </body>
 </html>

@@ -33,6 +33,7 @@
     </head>
     <body>
         <div class="dashboard">
+            <?php include 'include/modals.php'; ?>
         	<div class="sidebar">
         		<div class="sidebar-logo"></div>
         		<div class="divider"></div>
@@ -45,7 +46,6 @@
         		<div class="divider"></div>
         		<?php
         			if (!empty($_SESSION['userID'])) {
-        				$count = 0;
 						$userID = $_SESSION['userID'];
 
 						require_once('include/db_con.php');
@@ -58,11 +58,8 @@
 						while ($stmt->fetch()) { 
 							array_push($sections, $sectionID);?>
 							<div class="section delete-section">
-			        			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-			        				<button type="submit" name="deleteSection" value="deleteSection"  title="Delete section"><img src="gfx/trashcan.svg" alt="Delete"></button>
-			        				<input name="sectionID" value="<?=$sectionID?>" hidden>
-			    				</form>
-			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?> <?php echo ++$count; ?></a></h4>
+			        				<button title="Delete section" class="delete-section-modal-btn" data-section-id="<?=$sectionID?>"><img src="gfx/trashcan.svg" alt="Delete"></button>
+			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?></a></h4>
 			        		</div>
 			        		<div class="divider"></div>
 				<?php
@@ -75,7 +72,6 @@
         		<nav class="navigation">
 		        	<div class="navigation-right">
 		            	<ul>
-			             	<li><a href="#">API Key</a></li>
 			             	<li><a href="documentation.php">Documentaion</a></li>
 			             	<li><a href="include/signout.php">Sign Out</a></li>
 			            </ul>

@@ -179,8 +179,14 @@ if (filter_input(INPUT_POST, 'addItem')) {
 if (filter_input(INPUT_POST, 'saveItem')) {
 	
 	$itemID = filter_input(INPUT_POST,'itemID');
-	$title = filter_input(INPUT_POST,'title');
-	$content = filter_input(INPUT_POST,'content');
+	$title = filter_input(INPUT_POST,'itemTitle');
+	$content = filter_input(INPUT_POST,'itemContent');
+
+	echo $itemID;
+	echo "lel";
+	echo $title;
+	echo "lol";
+	echo $content;	
 
 	require_once('db_con.php');
 

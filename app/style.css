@@ -22,6 +22,14 @@ h1, h2, h3, h4, a {
   font-family: "Roboto", Helvetica, sans-serif;
   width: 150px; }
 
+.filled {
+  background-color: #004E64;
+  border: solid 1px #004E64; }
+
+.outlined {
+  border: solid 1px #004E64;
+  color: #004E64; }
+
 button {
   cursor: pointer; }
 
@@ -200,7 +208,14 @@ button {
               color: #004E64;
               text-decoration: none;
               font-size: 24px; }
-            .dashboard .content .navigation .navigation-right ul li a:hover {
+            .dashboard .content .navigation .navigation-right ul li button {
+              color: #004E64;
+              text-decoration: none;
+              font-size: 24px;
+              border: none;
+              background-color: Transparent;
+              font-weight: 300; }
+            .dashboard .content .navigation .navigation-right ul li a:hover, .dashboard .content .navigation .navigation-right ul li button:hover {
               text-decoration: underline; }
     .dashboard .content .content-area {
       padding-top: 150px;
@@ -233,12 +248,6 @@ button {
           box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5);
           border-radius: 5px;
           margin-bottom: 50px; }
-          .dashboard .content .content-area .items .item .filled {
-            background-color: #004E64;
-            border: solid 1px #004E64; }
-          .dashboard .content .content-area .items .item .outlined {
-            border: solid 1px #004E64;
-            color: #004E64; }
           .dashboard .content .content-area .items .item .CTA-btn {
             margin: 20px 10px 30px 10px;
             -webkit-transition: -webkit-transform .3s;
@@ -329,3 +338,41 @@ button {
       padding-bottom: 10px; }
     .dashboard .documentation .documentation-text p {
       padding-bottom: 40px; }
+
+.modal {
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: black;
+  background-color: rgba(0, 0, 0, 0.4); }
+  .modal .modal-content {
+    background-color: #FFFFFF;
+    margin: 15% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 340px;
+    text-align: center;
+    -webkit-box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5);
+    box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5); }
+    .modal .modal-content h1 {
+      padding: 5px; }
+    .modal .modal-content h2, .modal .modal-content p {
+      padding: 5px 0 20px 0; }
+    .modal .modal-content .two-buttons .filled {
+      margin-right: 10px; }
+
+.apiModal {
+  display: none; }
+
+.delete-section-modal {
+  display: none; }
+
+.delete-item-modal {
+  display: none; }
+
+.update-item-modal {
+  display: none; }

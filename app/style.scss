@@ -45,6 +45,16 @@ h1, h2, h3, h4, a{
 	width: 150px;
 }
 
+.filled {
+	background-color: $aqua-blue;
+	border: solid 1px $aqua-blue;
+}
+
+.outlined {
+	border: solid 1px $aqua-blue;
+	color: $aqua-blue;
+}
+
 button {
     cursor:pointer;
 }
@@ -281,7 +291,16 @@ button {
 							font-size: 24px;
 						}
 
-						a:hover {
+						button {
+							color: $aqua-blue; 
+							text-decoration: none;
+							font-size: 24px;
+							border: none;
+							background-color: Transparent;
+							font-weight: 300;
+						}
+
+						a:hover, button:hover {
 							text-decoration: underline;
 						}
 
@@ -330,16 +349,6 @@ button {
 					box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
 					border-radius: 5px;
 					margin-bottom: 50px;
-
-					.filled {
-						background-color: $aqua-blue;
-						border: solid 1px $aqua-blue;
-					}
-
-					.outlined {
-						border: solid 1px $aqua-blue;
-						color: $aqua-blue;
-					}
 
 					.CTA-btn {
 						margin: 20px 10px 30px 10px;
@@ -462,3 +471,60 @@ button {
 	}
 }
 
+
+//////////////////////////
+//        Modals        //
+//////////////////////////
+
+.modal {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4);
+
+    .modal-content {
+	    background-color: $white;
+	    margin: 15% auto;
+	    padding: 20px;
+	    border-radius: 20px;
+	    width: 340px;
+	    text-align: center;
+	    box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
+		
+		h1 {
+			padding: 5px;
+		}
+
+	    h2, p {
+	    	padding: 5px 0 20px 0;
+	    }
+
+	    .two-buttons {
+
+	    	.filled {
+	    		margin-right: 10px;
+	    	}
+	    }
+	}
+}
+
+.apiModal {
+	display: none;
+}
+
+.delete-section-modal {
+	display: none;
+}
+
+.delete-item-modal {
+	display: none;
+}
+
+.update-item-modal {
+	display: none;
+}
