@@ -25,7 +25,7 @@
         <div class="hero">
         	<div class="hero-left">
         		<h1>It is time to make your <strong>static</strong> site <i>dynamic</i>!</h1>
-        		<h3>Spare the hassle of content management systems, and blah blah</h3>
+        		<h3>Spare the hassle of content management systems, and try this simple solution</h3>
         		<a href="#"><button class="CTA-btn">Try it now!</button></a>
         	</div>
         	<div class="hero-right">

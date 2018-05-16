@@ -20,7 +20,7 @@ if (!empty($_GET['api-key']) && !empty($_GET['section']) && !empty($_GET['item']
 		response(200, "Content found", $content);
 
 	} else {
-
+		
 		response(404, "Content not found", NULL);
 
 	};

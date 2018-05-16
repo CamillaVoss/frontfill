@@ -1,6 +1,6 @@
 <?php 
 	include 'include/db_functions.php';
-
+	
 	if (empty($_SESSION['userID'])) {
 		header("Location: signin.php");
 	} elseif (empty($_SERVER['QUERY_STRING'])) {
@@ -68,6 +68,9 @@
 
         	<div class="content <?php if (!empty($sections)) {echo 'not-empty';}; ?>">
         		<nav class="navigation">
+        			<div class="navigation-left">
+        				<button class="menu">&#9776;</button>
+        			</div>
 		        	<div class="navigation-right">
 		            	<ul>
 			             	<li><a href="documentation.php">Documentaion</a></li>

@@ -21,7 +21,7 @@
 						<h1>Create new user</h1>
 
 						<div class="form-group">
-		                	<input type="email" name="email" placeholder="Email" required>
+		                	<input type="email" name="email" placeholder="Email" required autofocus>
 		                </div>
 
 		                <div class="form-group">

@@ -78,4 +78,11 @@ for (var closeDeleteItem of document.getElementsByClassName("close-delete-item-m
 	    document.getElementsByClassName("delete-item-modal")[0].style.display = "none";
 	});
 }
+
+
+// Open section bar
+$( ".menu" ).click(function() {
+	$(".sidebar").slideToggle();
+});
+
 </script>

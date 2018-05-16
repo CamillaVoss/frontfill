@@ -113,6 +113,7 @@ button {
   display: -ms-flexbox;
   display: flex; }
   .dashboard .sidebar {
+    display: box;
     background-color: #343838;
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
@@ -121,7 +122,8 @@ button {
     position: fixed;
     top: 0;
     bottom: 0;
-    z-index: 1; }
+    z-index: 1;
+    overflow-y: scroll; }
     .dashboard .sidebar .sidebar-logo {
       height: 35px;
       width: 150px;
@@ -196,6 +198,8 @@ button {
       -webkit-box-shadow: -4px 2px 14px -4px rgba(0, 0, 0, 0.5);
       box-shadow: -4px 2px 14px -4px rgba(0, 0, 0, 0.5);
       overflow: hidden; }
+      .dashboard .content .navigation .navigation-left {
+        display: none; }
       .dashboard .content .navigation .navigation-right {
         float: right;
         text-align: right; }
@@ -217,6 +221,19 @@ button {
               font-weight: 300; }
             .dashboard .content .navigation .navigation-right ul li a:hover, .dashboard .content .navigation .navigation-right ul li button:hover {
               text-decoration: underline; }
+      .dashboard .content .navigation .navigation-left {
+        float: left;
+        text-align: left;
+        padding: 20px 30px; }
+        .dashboard .content .navigation .navigation-left button {
+          color: #004E64;
+          text-decoration: none;
+          font-size: 24px;
+          border: none;
+          background-color: Transparent;
+          font-weight: 300; }
+        .dashboard .content .navigation .navigation-left button:hover {
+          text-decoration: underline; }
     .dashboard .content .content-area {
       padding-top: 150px;
       margin-left: 250px; }
@@ -281,7 +298,7 @@ button {
               float: left;
               margin: 20px;
               padding: 15px;
-              width: 75%;
+              width: calc(100% - 137px);
               border: solid 1px #E0E0E0;
               font-family: "Roboto", Helvetica, sans-serif;
               font-size: 14px;
@@ -289,13 +306,15 @@ button {
               border-radius: 2px; }
             .dashboard .content .content-area .items .item .item-top h3 {
               float: left;
+              text-align: left;
               margin: 20px;
               padding: 0 15px 15px 15px;
-              font-size: 28px; }
+              font-size: 28px;
+              width: calc(100% - 137px); }
           .dashboard .content .content-area .items .item .item-content {
             margin: 10px 20px;
             padding: 15px;
-            width: 90%;
+            width: calc(100% - 70px);
             border: solid 1px #E0E0E0;
             font-family: "Roboto", Helvetica, sans-serif;
             font-size: 14px;
@@ -322,6 +341,35 @@ button {
       -ms-transform: scale(1.2);
       transform: scale(1.2); }
 
+@media only screen and (max-width: 700px) {
+  .dashboard .sidebar {
+    display: none; }
+  .dashboard .content .navigation .navigation-left {
+    display: block; }
+  .dashboard .content .content-area {
+    margin-left: 0; }
+    .dashboard .content .content-area .alert {
+      width: 100%; } }
+
+@media only screen and (max-width: 465px) {
+  .dashboard .content .navigation {
+    display: block; }
+    .dashboard .content .navigation .navigation-left {
+      padding-right: 0; }
+    .dashboard .content .navigation .navigation-right {
+      padding-left: 0;
+      margin-right: 15px; }
+      .dashboard .content .navigation .navigation-right ul {
+        padding-left: 0; }
+        .dashboard .content .navigation .navigation-right ul li {
+          padding: 10px 5px; }
+          .dashboard .content .navigation .navigation-right ul li a {
+            font-size: 20px; }
+          .dashboard .content .navigation .navigation-right ul li button {
+            font-size: 20px; }
+  .dashboard .content .content-area .items .item .filled {
+    margin-bottom: 0; } }
+
 .sidebar .TOC {
   padding-top: 10px;
   padding-left: 10px;
@@ -344,6 +392,10 @@ button {
       padding-bottom: 10px; }
     .dashboard .documentation .documentation-text p {
       padding-bottom: 40px; }
+
+@media only screen and (max-width: 700px) {
+  .dashboard .documentation .documentation-text {
+    margin-left: 0; } }
 
 .modal {
   position: fixed;
@@ -392,3 +444,9 @@ button {
 
 .create-section-modal {
   display: none; }
+
+@media only screen and (max-width: 400px) {
+  .modal .modal-content {
+    width: 250px; }
+    .modal .modal-content .two-buttons .filled {
+      margin: 0 0 10px 0; } }

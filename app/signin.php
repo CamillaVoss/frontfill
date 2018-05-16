@@ -29,7 +29,7 @@
                         $_SESSION['create_succes'] = false;
                         ?>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="Email" required>
+                            <input type="email" name="email" placeholder="Email" required autofocus>
                         </div>
 
                         <div class="form-group">

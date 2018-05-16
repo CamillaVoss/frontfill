@@ -145,12 +145,43 @@ if (filter_input(INPUT_POST, 'deleteSection')) {
 	$sectionID = filter_input(INPUT_POST, 'sectionID');
 
 	require_once('db_con.php');
-	$sql = 'DELETE FROM sections WHERE sectionID = ?';
-	$stmt = $con->prepare($sql);
-	$stmt->bind_param('i', $sectionID);
-	$stmt->execute();
+	$con->autocommit(FALSE);
+    $con->begin_transaction();
 
-	$_SESSION['delete_section'] = true;
+    $sql = 'DELETE fields.*
+    		FROM fields
+			INNER JOIN items
+			ON items_itemID = itemID
+			WHERE sections_sectionID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('i', $sectionID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('field delete failed');
+    };
+
+    $sql = 'DELETE FROM items
+    		WHERE sections_sectionID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('i', $sectionID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('Item delete failed');
+    };
+
+    $sql = 'DELETE FROM sections
+    		WHERE sectionID = ?';
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param('i', $sectionID);
+
+    if (!$stmt->execute()) {
+        $con->rollback();
+        die('Section delete failed');
+    };
+
+    $con->commit();
 }
 
 
@@ -208,16 +239,18 @@ if (filter_input(INPUT_POST, 'saveItem')) {
 		$con->autocommit(FALSE);
 	    $con->begin_transaction();
 
-	    $sql = 'UPDATE items
-	    		SET title = ?
-	    		WHERE itemID = ?';
-	    $stmt = $con->prepare($sql);
-	    $stmt-> bind_param('si', $title, $itemID);
+	    if (!empty($title)) {
+	    	$sql = 'UPDATE items
+					SET title = ?
+					WHERE itemID = ?';
+			$stmt = $con->prepare($sql);
+			$stmt-> bind_param('si', $title, $itemID);
 
-	    if (!$stmt->execute()) {
-	        $con->rollback();
-	        die('Item update failed');
-	    };
+			if (!$stmt->execute()) {
+			    $con->rollback();
+			    die('Item update failed');
+			};
+	    }
 
 	    $sql = 'UPDATE fields
 	    		SET content = ?

@@ -26,7 +26,7 @@ require_once('include/db_con.php');
 	<div class="modal-content">
 		<h2>Create section</h1>
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST">
-			<input name="title"  placeholder="Section Title (must be unique)" class="section-title">
+			<input name="title"  placeholder="Section Title (must be unique)" class="section-title" autofocus>
 			<div class="two-buttons">
 			    <button type="submit" name="addSection" value="addSection" class="CTA-btn filled">Save</button>
 	        	<button class="CTA-btn outlined close-create-section-modal">Cancel</button>     

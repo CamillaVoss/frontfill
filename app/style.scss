@@ -180,6 +180,7 @@ button {
 	display: flex;
 
 	.sidebar {
+		display: box;
 		background-color: $dark-grey;
 		flex-grow: 0;
 		min-width: 250px;
@@ -187,6 +188,7 @@ button {
 	    top: 0;
 	    bottom: 0;
 	    z-index: 1;
+	    overflow-y: scroll;
 
 		.sidebar-logo {
 			height: 35px;
@@ -275,6 +277,10 @@ button {
 			box-shadow: -4px 2px 14px -4px rgba(0,0,0,0.50);
 			overflow: hidden;
 
+			.navigation-left {
+				display: none;
+			}
+
 			.navigation-right {	
 				float: right;
     			text-align: right;
@@ -305,6 +311,26 @@ button {
 						}
 
 					}
+				}
+			}
+
+			.navigation-left {	
+				float: left;
+    			text-align: left;
+    			padding: 20px 30px;
+
+
+				button {
+					color: $aqua-blue; 
+					text-decoration: none;
+					font-size: 24px;
+					border: none;
+					background-color: Transparent;
+					font-weight: 300;
+				}
+
+				button:hover {
+					text-decoration: underline;
 				}
 			}
 		}
@@ -380,7 +406,7 @@ button {
 							float: left;
 							margin: 20px;
 							padding: 15px;
-							width: 75%;
+							width: calc(100% - 137px);
 							border: solid 1px $grey;
 							font-family: $font-stack;
 							font-size: 14px;
@@ -390,16 +416,18 @@ button {
 
 						h3 {
 							float: left;
+							text-align: left;
 							margin: 20px;
 							padding: 0 15px 15px 15px;
 							font-size: 28px;
+							width: calc(100% - 137px);
 						}
 					}
 
 					.item-content {
 						margin: 10px 20px;
 						padding: 15px;
-						width: 90%;
+						width: calc(100% - 70px);
 						border: solid 1px $grey;
 						font-family: $font-stack;
 						font-size: 14px;
@@ -434,6 +462,85 @@ button {
 	}
 }
 
+
+@media only screen and (max-width: 700px) {
+	.dashboard {
+
+		.sidebar {
+	    	display: none;
+	    }
+
+	    .content {
+
+	    	.navigation {
+
+	    		.navigation-left {
+	    			display: block;
+	    		}
+
+	    	}
+
+	    	.content-area {
+				margin-left: 0;
+
+				.alert {
+					width: 100%;
+				}
+	    	}
+	    }
+	}
+}
+
+
+@media only screen and (max-width: 465px) {
+	.dashboard {
+
+	    .content {
+
+	    	.navigation {
+	    		display: block;
+
+	    		.navigation-left {
+	    			padding-right: 0;
+	    		}
+
+	    		.navigation-right {
+	    			padding-left: 0;
+	    			margin-right: 15px;
+
+	    			ul {
+						padding-left: 0;
+						
+						li {
+							padding: 10px 5px;
+							a {
+								font-size: 20px;
+							}
+
+							button {
+								font-size: 20px;
+							}
+
+						}
+					}
+	    		}
+	    	}
+
+	    	.content-area {
+
+	    		.items {
+
+	    			.item {
+
+	    				.filled {
+	    					margin-bottom: 0;
+	    				}
+	    			}
+	    		}
+	    	}
+	    }
+	}
+}
 
 
 //////////////////////////
@@ -474,6 +581,18 @@ button {
 
 			p {
 				padding-bottom: 40px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) { 
+	.dashboard {
+
+		.documentation {
+
+			.documentation-text {
+				margin-left: 0;
 			}
 		}
 	}
@@ -548,4 +667,20 @@ button {
 
 .create-section-modal {
 	display: none;
+}
+
+@media only screen and (max-width: 400px) {
+	.modal {
+
+		.modal-content {
+			width: 250px;
+
+			.two-buttons {
+
+				.filled {
+					margin: 0 0 10px 0;
+				}
+			}
+		}
+	}
 }
