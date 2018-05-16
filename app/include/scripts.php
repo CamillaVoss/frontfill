@@ -1,15 +1,15 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<!-- Alerts -->
+
 <script>
+// Alert
 $(document).ready (function(){
     $("#alert").delay(3000).fadeTo(1000, 0.0);  
 });
-</script>
 
 
-<!-- Api modal -->
-<script>
+
+//Api modal
 for (var element of document.getElementsByClassName("api-btn")) {
 	element.addEventListener("click", function(){
 	    document.getElementsByClassName("apiModal")[0].style.display = "block";
@@ -21,11 +21,9 @@ for (var element of document.getElementsByClassName("close-api")) {
 	    document.getElementsByClassName("apiModal")[0].style.display = "none";
 	});
 }
-</script>
 
 
-<!-- Create section modal -->
-<script>
+//Create section modal
 for (var element of document.getElementsByClassName("create-section-modal-btn")) {
 	element.addEventListener("click", function(){
 	    document.getElementsByClassName("create-section-modal")[0].style.display = "block";
@@ -37,11 +35,9 @@ for (var element of document.getElementsByClassName("close-api")) {
 	    document.getElementsByClassName("close-create-section-modal")[0].style.display = "none";
 	});
 }
-</script>
 
 
-<!-- Delete section modal -->
-<script>
+//Delete section modal
 for (var element of document.getElementsByClassName("delete-section-modal-btn")) {
 	var sectionId = element.dataset.sectionId;
 	element.addEventListener("click", function(){
@@ -57,23 +53,28 @@ for (var element of document.getElementsByClassName("close-delete-section-modal"
 	    document.getElementsByClassName("delete-section-modal")[0].style.display = "none";
 	});
 }
-</script>
 
 
-<!-- Delete item modal -->
-<script>
-for (var element of document.getElementsByClassName("delete-item-modal-btn")) {
-	var itemId = element.dataset.itemId;
-	element.addEventListener("click", function(){
+//Delete item modal
+for (var openDeleteItem of document.getElementsByClassName("delete-item-modal-btn")) {
+	itemId = openDeleteItem.dataset.itemId;
+	console.log("itemId " + itemId);
+	console.log("Element:");
+	console.log(openDeleteItem);
+	openDeleteItem.addEventListener("click", function(){
+		console.log("CLICKED");
+		console.log("itemId " + itemId);
 		var modal = document.getElementsByClassName("delete-item-modal")[0];
 		var itemIdInput = modal.querySelector("input[name=itemID]");
+		console.log(itemIdInput);
 		itemIdInput.value = itemId;
 	    modal.style.display = "block";
 	});
 }
 
-for (var element of document.getElementsByClassName("close-delete-item-modal")) {
-	element.addEventListener("click", function(){
+
+for (var closeDeleteItem of document.getElementsByClassName("close-delete-item-modal")) {
+	closeDeleteItem.addEventListener("click", function(){
 	    document.getElementsByClassName("delete-item-modal")[0].style.display = "none";
 	});
 }

@@ -243,6 +243,7 @@ button {
         .dashboard .content .content-area .items .item {
           background-color: #FFFFFF;
           width: 80%;
+          max-width: 730px;
           margin: 0 auto;
           -webkit-box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5);
           box-shadow: 2px 3px 14px -4px rgba(0, 0, 0, 0.5);
@@ -286,6 +287,11 @@ button {
               font-size: 14px;
               background-color: #F2F2F2;
               border-radius: 2px; }
+            .dashboard .content .content-area .items .item .item-top h3 {
+              float: left;
+              margin: 20px;
+              padding: 0 15px 15px 15px;
+              font-size: 28px; }
           .dashboard .content .content-area .items .item .item-content {
             margin: 10px 20px;
             padding: 15px;

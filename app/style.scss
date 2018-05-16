@@ -345,6 +345,7 @@ button {
 				.item {
 					background-color: $white;
 					width: 80%;
+					max-width: 730px;
 					margin: 0 auto;
 					box-shadow: 2px 3px 14px -4px rgba(0,0,0,0.50);
 					border-radius: 5px;
@@ -385,6 +386,13 @@ button {
 							font-size: 14px;
 							background-color: $light-grey;
 							border-radius: 2px;
+						}
+
+						h3 {
+							float: left;
+							margin: 20px;
+							padding: 0 15px 15px 15px;
+							font-size: 28px;
 						}
 					}
 

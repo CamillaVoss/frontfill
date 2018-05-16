@@ -15,7 +15,7 @@
 <?php
 	if (array_key_exists('delete_section', $_SESSION) && $_SESSION['delete_section']) { 
 ?>
-		<div class="alert red" id="alert">
+		<div class="alert green" id="alert">
 			<p>Section deleted</p>
 		</div>
 <?php 
@@ -54,7 +54,7 @@
 <?php
 	if (array_key_exists('delete_item', $_SESSION) && $_SESSION['delete_item']) { 
 ?>
-		<div class="alert red" id="alert">
+		<div class="alert green" id="alert">
 			<p>Item deleted</p>
 		</div>
 <?php 
