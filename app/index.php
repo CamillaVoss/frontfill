@@ -38,9 +38,7 @@
         		<div class="sidebar-logo"></div>
         		<div class="divider"></div>
         		<div class="section add-section">
-        			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST">
-        				<button type="submit" name="addSection" value="addSection"  title="Add section"><img src="gfx/add.svg" alt="Add"></button>
-    				</form>
+    				<button title="Add section" class="create-section-modal-btn"><img src="gfx/add.svg" alt="Add"></button>
         			<h4>Sections</h4>
         		</div>
         		<div class="divider"></div>

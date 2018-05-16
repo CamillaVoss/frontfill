@@ -60,5 +60,31 @@
 <?php 
 	}
 	$_SESSION['delete_item'] = false;
+?>	
+
+
+<!-- Item already exists -->
+<?php
+	if (array_key_exists('item_exists', $_SESSION) && $_SESSION['item_exists']) { 
+?>
+		<div class="alert red" id="alert">
+			<p>Item title already exists. Title must be unique within section</p>
+		</div>
+<?php 
+	}
+	$_SESSION['item_exists'] = false;
+?>	
+
+
+<!-- Section already exists -->
+<?php
+	if (array_key_exists('section_exists', $_SESSION) && $_SESSION['section_exists']) { 
+?>
+		<div class="alert red" id="alert">
+			<p>Section title already exists. The section title must be unique</p>
+		</div>
+<?php 
+	}
+	$_SESSION['section_exists'] = false;
 ?>		
 

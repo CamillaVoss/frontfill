@@ -3,7 +3,7 @@
 <!-- Alerts -->
 <script>
 $(document).ready (function(){
-    $("#alert").delay(2000).fadeTo(1000, 0.0);  
+    $("#alert").delay(3000).fadeTo(1000, 0.0);  
 });
 </script>
 
@@ -19,6 +19,22 @@ for (var element of document.getElementsByClassName("api-btn")) {
 for (var element of document.getElementsByClassName("close-api")) {
 	element.addEventListener("click", function(){
 	    document.getElementsByClassName("apiModal")[0].style.display = "none";
+	});
+}
+</script>
+
+
+<!-- Create section modal -->
+<script>
+for (var element of document.getElementsByClassName("create-section-modal-btn")) {
+	element.addEventListener("click", function(){
+	    document.getElementsByClassName("create-section-modal")[0].style.display = "block";
+	});
+}
+
+for (var element of document.getElementsByClassName("close-api")) {
+	element.addEventListener("click", function(){
+	    document.getElementsByClassName("close-create-section-modal")[0].style.display = "none";
 	});
 }
 </script>
@@ -59,35 +75,6 @@ for (var element of document.getElementsByClassName("delete-item-modal-btn")) {
 for (var element of document.getElementsByClassName("close-delete-item-modal")) {
 	element.addEventListener("click", function(){
 	    document.getElementsByClassName("delete-item-modal")[0].style.display = "none";
-	});
-}
-</script>
-
-
-<!-- Update item modal -->
-<script>
-for (var element of document.getElementsByClassName("update-item-modal-btn")) {
-	var itemId = element.dataset.itemId;
-	var itemTitle = element.dataset.itemTitle;
-	var itemContent = element.dataset.itemContent;
-	element.addEventListener("click", function(){
-		var modal = document.getElementsByClassName("update-item-modal")[0];
-		var itemIdInput = modal.querySelector("input[name=itemID]");
-		itemIdInput.value = itemId;
-
-		var itemTitleInput = modal.querySelector("input[name=itemTitle]");
-		itemTitleInput.value = itemTitle;
-
-		var itemContentInput = modal.querySelector("input[name=itemContent]");
-		itemContentInput.value = itemContent;
-		
-	    modal.style.display = "block";
-	});
-}
-
-for (var element of document.getElementsByClassName("close-update-item-modal")) {
-	element.addEventListener("click", function(){
-	    document.getElementsByClassName("update-item-modal")[0].style.display = "none";
 	});
 }
 </script>

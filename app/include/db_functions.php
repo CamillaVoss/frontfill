@@ -110,17 +110,29 @@ if (filter_input(INPUT_POST, 'signin')) {
 
 if (filter_input(INPUT_POST, 'addSection')) { 
 
-	$title = 'Section';
+	$title = filter_input(INPUT_POST,'title');
 
 	$userID = $_SESSION['userID'];
 
 	require_once('db_con.php');
-	$sql = 'INSERT INTO sections (title, users_userID) VALUES (?, ?)';
-	$stmt = $con->prepare($sql);
-	$stmt->bind_param('si', $title, $userID);
-	$stmt->execute();
 
-	$_SESSION['add_section'] = true;
+	$sql = 'SELECT sectionID FROM sections WHERE title = ?';
+	$stmt = $con->prepare($sql);
+	$stmt->bind_param('s', $title);
+	$stmt->execute();
+	$stmt->bind_result($sectionID);
+	while ($stmt->fetch()) {}
+
+	if (empty($sectionID)) {
+		$sql = 'INSERT INTO sections (title, users_userID) VALUES (?, ?)';
+		$stmt = $con->prepare($sql);
+		$stmt->bind_param('si', $title, $userID);
+		$stmt->execute();
+
+		$_SESSION['add_section'] = true;
+	} else {
+		$_SESSION['section_exists'] = true;
+	}
 }
 
 
@@ -179,45 +191,52 @@ if (filter_input(INPUT_POST, 'addItem')) {
 if (filter_input(INPUT_POST, 'saveItem')) {
 	
 	$itemID = filter_input(INPUT_POST,'itemID');
-	$title = filter_input(INPUT_POST,'itemTitle');
-	$content = filter_input(INPUT_POST,'itemContent');
-
-	echo $itemID;
-	echo "lel";
-	echo $title;
-	echo "lol";
-	echo $content;	
+	$title = filter_input(INPUT_POST,'title');
+	$content = filter_input(INPUT_POST,'content');	
 
 	require_once('db_con.php');
 
-	$con->autocommit(FALSE);
-    $con->begin_transaction();
+	$sql = 'SELECT itemID FROM items WHERE title = ?';
+	$stmt = $con->prepare($sql);
+	$stmt->bind_param('s', $title);
+	$stmt->execute();
+	$stmt->bind_result($itemIDs);
+	while ($stmt->fetch()) {}
 
-    $sql = 'UPDATE items
-    		SET title = ?
-    		WHERE itemID = ?';
-    $stmt = $con->prepare($sql);
-    $stmt-> bind_param('si', $title, $itemID);
+	if (empty($itemIDs)) {
 
-    if (!$stmt->execute()) {
-        $con->rollback();
-        die('Item update failed');
-    };
+		$con->autocommit(FALSE);
+	    $con->begin_transaction();
 
-    $sql = 'UPDATE fields
-    		SET content = ?
-    		WHERE items_itemID = ?';
-    $stmt = $con->prepare($sql);
-    $stmt-> bind_param('si', $content, $itemID);
+	    $sql = 'UPDATE items
+	    		SET title = ?
+	    		WHERE itemID = ?';
+	    $stmt = $con->prepare($sql);
+	    $stmt-> bind_param('si', $title, $itemID);
 
-    if (!$stmt->execute()) {
-        $con->rollback();
-        die('Item update failed');
-    };
+	    if (!$stmt->execute()) {
+	        $con->rollback();
+	        die('Item update failed');
+	    };
 
-    $con->commit();
+	    $sql = 'UPDATE fields
+	    		SET content = ?
+	    		WHERE items_itemID = ?';
+	    $stmt = $con->prepare($sql);
+	    $stmt-> bind_param('si', $content, $itemID);
 
-    $_SESSION['update_item'] = true;
+	    if (!$stmt->execute()) {
+	        $con->rollback();
+	        die('Item update failed');
+	    };
+
+	    $con->commit();
+
+	    $_SESSION['update_item'] = true;
+
+	} else {
+		$_SESSION['item_exists'] = true;
+	}
 }
 
 

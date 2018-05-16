@@ -364,6 +364,16 @@ button {
       padding: 5px 0 20px 0; }
     .modal .modal-content .two-buttons .filled {
       margin-right: 10px; }
+    .modal .modal-content input[name="title"] {
+      margin: 20px;
+      padding: 15px;
+      margin-top: 0;
+      width: 75%;
+      border: solid 1px #E0E0E0;
+      font-family: "Roboto", Helvetica, sans-serif;
+      font-size: 14px;
+      background-color: #F2F2F2;
+      border-radius: 2px; }
 
 .apiModal {
   display: none; }
@@ -374,5 +384,5 @@ button {
 .delete-item-modal {
   display: none; }
 
-.update-item-modal {
+.create-section-modal {
   display: none; }

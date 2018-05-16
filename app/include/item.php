@@ -19,19 +19,26 @@
                 <div class="item">
                     <div class="item-top">
                         <button title="Delete item" class="delete-item-modal-btn delete" data-item-id="<?=$itemID?>"><img src="gfx/trashcan-black.svg" alt="Delete"></button>
-
-                        <input name="title"  placeholder="<?php if (empty($title)) {echo 'Title (Must be unique within section)';}; ?>" <?php if (!empty($title)) {echo htmlspecialchars("value='".$title."'");};?> class="item-title">
+                            
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST">  
+                        <?php if (empty($title)) { ?>
+                            <input name="title"  placeholder="Title (Must be unique within section)" class="item-title">
+                        <?php } else {?>
+                            <h3><?=$title?></h3>
+                        <?php } ?>
                     </div>
 
                     <div>
                         <textarea name="content" placeholder="<?php if (empty($content)) {echo 'Write your content here';}; ?>"  class="item-content"><?php if (!empty($content)) {echo htmlspecialchars($content);};?></textarea>
                     </div>
-                    
+                        
                     <div>
-                        <button type="submit" name="saveItem" data-item-id="<?=$itemID?>" data-item-title="<?=$title?>" data-item-content="<?=$content?>" value="saveItem" class="CTA-btn filled update-item-modal-btn">Save</button>
+                        <input name="itemID" value="<?=$itemID?>" type="hidden">
+                        <button type="submit" name="saveItem" value="saveItem" class="CTA-btn filled">Save</button>
 
                         <a href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>"><button type="submit" name="cancel" value="cancel" class="CTA-btn outlined">Cancel</button></a>
                     </div>
+                </form> 
                 </div>
 <?php
         }

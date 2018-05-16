@@ -3,7 +3,7 @@ header("Content-Type:application/json");
 include 'include/api_db_functions.php';
 
 if (!empty($_GET['api-key']) && !empty($_GET['section']) && !empty($_GET['item'])) {
-
+	
 	$api_key = $_GET['api-key'];
 	$section = $_GET['section'];
 	$item = $_GET['item'];
@@ -15,13 +15,13 @@ if (!empty($_GET['api-key']) && !empty($_GET['section']) && !empty($_GET['item']
 
 		response(404, "Invalid API", NULL);
 
-	} else if (empty($content_result['error'])) {
+	} else if (!empty($content_result['value'])) {
 
-		response(404, "Content not found", NULL);
+		response(200, "Content found", $content);
 
 	} else {
 
-		response(200, "Content found", $content);
+		response(404, "Content not found", NULL);
 
 	};
 
