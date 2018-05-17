@@ -1,20 +1,26 @@
 <?php 
 	include 'include/db_functions.php';
-	
+
 	if (empty($_SESSION['userID'])) {
 		header("Location: signin.php");
-	} elseif (empty($_SERVER['QUERY_STRING'])) {
+	} else {
 		$userID = $_SESSION['userID'];
+	}
 
-		require_once('include/db_con.php');
-		$sql = 'SELECT sectionID FROM sections WHERE users_userID = ? LIMIT 1';
-		$stmt = $con->prepare($sql);
-		$stmt->bind_param('i', $userID);
-		$stmt->execute();
-		$stmt->bind_result($sectionID);
-		$stmt->fetch();
-		
-		header("Location: index.php?sectionID=".$sectionID);
+
+	require_once('include/db_con.php');
+	$sql = 'SELECT sectionID FROM sections WHERE users_userID = ? LIMIT 1';
+	$stmt = $con->prepare($sql);
+	$stmt->bind_param('i', $userID);
+	$stmt->execute();
+	$stmt->bind_result($sectionID);
+	$sectionIDs = array();
+	while ($stmt->fetch()) { 
+		array_push($sectionIDs, $sectionID);
+	}
+
+	if (empty($_SERVER['QUERY_STRING'])) {
+		header("Location: index.php?sectionID=".$sectionIDs[0]);
 		die('');
 	}
 
@@ -27,9 +33,18 @@
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta property="og:site_name" content="Frontfill"/>
+        <meta property="og:title" content="Dynamic content app"/>
+        <meta property="og:description" content="It is time to make your static site dynamic!"/>
+		<meta property="og:image" content="gfx/share.png">
+		<meta property="og:url" content="http://frontfill.com/">
         <title>Frontfill | Dynamic content app</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" 
+      		  type="image/png" 
+      		  href="gfx/favicon.png">
+
     </head>
     <body>
         <div class="dashboard">

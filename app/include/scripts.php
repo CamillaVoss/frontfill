@@ -39,7 +39,7 @@ for (var element of document.getElementsByClassName("close-api")) {
 
 //Delete section modal
 for (var element of document.getElementsByClassName("delete-section-modal-btn")) {
-	var sectionId = element.dataset.sectionId;
+	let sectionId = element.dataset.sectionId;
 	element.addEventListener("click", function(){
 		var modal = document.getElementsByClassName("delete-section-modal")[0];
 		var sectionIdInput = modal.querySelector("input[name=sectionID]");
@@ -57,16 +57,10 @@ for (var element of document.getElementsByClassName("close-delete-section-modal"
 
 //Delete item modal
 for (var openDeleteItem of document.getElementsByClassName("delete-item-modal-btn")) {
-	itemId = openDeleteItem.dataset.itemId;
-	console.log("itemId " + itemId);
-	console.log("Element:");
-	console.log(openDeleteItem);
+	let itemId = openDeleteItem.dataset.itemId;
 	openDeleteItem.addEventListener("click", function(){
-		console.log("CLICKED");
-		console.log("itemId " + itemId);
 		var modal = document.getElementsByClassName("delete-item-modal")[0];
 		var itemIdInput = modal.querySelector("input[name=itemID]");
-		console.log(itemIdInput);
 		itemIdInput.value = itemId;
 	    modal.style.display = "block";
 	});

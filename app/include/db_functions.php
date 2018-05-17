@@ -130,6 +130,12 @@ if (filter_input(INPUT_POST, 'addSection')) {
 		$stmt->execute();
 
 		$_SESSION['add_section'] = true;
+
+		$sectionID = $stmt->insert_id;
+
+		header("Location: index.php?sectionID=".$sectionID);
+		die('');
+
 	} else {
 		$_SESSION['section_exists'] = true;
 	}

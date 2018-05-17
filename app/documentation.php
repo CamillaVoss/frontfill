@@ -11,6 +11,9 @@
         <title>Frontfill | Documentation</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" 
+              type="image/png" 
+              href="gfx/favicon.png">
     </head>
     <body>
         <div class="dashboard">
