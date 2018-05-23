@@ -16,11 +16,10 @@
         $stmt->bind_result($content, $title, $itemID);
 
         while ($stmt->fetch()) { ?>            
-                <div class="item">
+                <div class="item">            
+                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST"> 
                     <div class="item-top">
-                        <button title="Delete item" class="delete-item-modal-btn delete" data-item-id="<?=$itemID?>"><img src="gfx/trashcan-black.svg" alt="Delete"></button>
-                            
-                <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST">  
+                        <button title="Delete item" class="delete-item-modal-btn delete" data-item-id="<?=$itemID?>"><img src="gfx/trashcan-black.svg" alt="Delete"></button> 
                         <?php if (empty($title)) { ?>
                             <input name="title"  placeholder="Title (Must be unique within section)" class="item-title">
                         <?php } else {?>
@@ -36,7 +35,7 @@
                         <input name="itemID" value="<?=$itemID?>" type="hidden">
                         <button type="submit" name="saveItem" value="saveItem" class="CTA-btn filled">Save</button>
 
-                        <a href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>"><button type="submit" name="cancel" value="cancel" class="CTA-btn outlined">Cancel</button></a>
+                        <a class="CTA-btn outlined" href="<?=$_SERVER['PHP_SELF'].'?'.$_SERVER['QUERY_STRING']?>">Cancel</a>
                     </div>
                 </form> 
                 </div>

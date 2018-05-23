@@ -33,7 +33,7 @@ h1, h2, h3, h4, a {
   transform: scale(1.2); }
 
 .navigation {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
   padding-top: 20px; }
@@ -56,22 +56,21 @@ h1, h2, h3, h4, a {
         padding: 20px; }
         .navigation .navigation-right ul li a {
           color: #FFFFFF;
-          mix-blend-mode: difference;
           text-decoration: none;
           font-size: 24px; }
         .navigation .navigation-right ul li a:hover {
           text-decoration: underline; }
-  @media screen and (max-width: 870px) {
+  @media screen and (max-width: 880px) {
     .navigation .navigation-left .navigation-left-img {
       height: 60px;
       width: 60px;
       background-image: url("gfx/box.svg"); } }
-  @media screen and (max-width: 620px) {
+  @media screen and (max-width: 640px) {
     .navigation .navigation-right ul li {
       padding: 10px; }
       .navigation .navigation-right ul li a {
         font-size: 18px; } }
-  @media screen and (max-width: 480px) {
+  @media screen and (max-width: 520px) {
     .navigation .navigation-left {
       float: none;
       width: 100%;
@@ -111,7 +110,7 @@ h1, h2, h3, h4, a {
     width: 25%;
     min-width: 310px; }
     .hero .hero-left h1 {
-      padding: 15px 0; }
+      padding: 30px 0; }
     .hero .hero-left h3 {
       padding: 10px 0 20px 0;
       line-height: 1.5; }
@@ -252,6 +251,14 @@ h1, h2, h3, h4, a {
         .info .info-row .info-row-right h3, .info .info-row .info-row-right p, .info .info-row .info-row-left h3, .info .info-row .info-row-left p {
           text-align: center;
           padding-top: 15px; }
+        .info .info-row .info-row-right h3:after, .info .info-row .info-row-left h3:after {
+          content: "";
+          position: absolute;
+          border-top: 1px solid #004E64;
+          left: calc(50% - 13px);
+          bottom: 0;
+          width: 26px;
+          height: 0px; }
         .info .info-row .info-row-right p, .info .info-row .info-row-left p {
           padding-top: 0; }
         .info .info-row .info-row-right .step-3, .info .info-row .info-row-left .step-3 {
@@ -329,7 +336,9 @@ h1, h2, h3, h4, a {
       .pricing .pricing-row .pricing-row-divider hr {
         background-color: white;
         border: none;
-        margin: 0 auto; }
+        margin: 0 auto;
+        width: 2px;
+        height: 450px; }
     .pricing .pricing-row .pricing-row-right {
       width: 250px;
       padding-top: 25px; }

@@ -1,6 +1,15 @@
 <!doctype html>
-<html>
+<html lang="en">
     <head>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-119770967-1"></script>
+        <script>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'UA-119770967-1');
+        </script>
         <meta charset="utf-8">
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,7 +35,7 @@
             	<ul>
 	             	<li><a href="#info-point">How it works</a></li>
 	             	<li><a href="#price-point">Pricing</a></li>
-	             	<li><a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a></li>
+	             	<li><a href="http://app.frontfill.com/signup.php" class="CTA-btn">Try it now!</a></li>
 	            </ul>
             </div>
         </nav>
@@ -35,7 +44,7 @@
         	<div class="hero-left">
         		<h1>It is time to make your <strong>static</strong> site <i>dynamic</i>!</h1>
         		<h3>Spare the hassle of content management systems, and try this simple solution</h3>
-        		<a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a>
+        		<a href="http://app.frontfill.com/signup.php" class="CTA-btn">Try it now!</a>
         	</div>
         	<div class="hero-right">
         		<div class="hero-right-image"></div>
@@ -86,11 +95,11 @@
         			    <li>Userfriendly interface</li>
         			</ul>
         			<div class="pricing-row-CTA">
-        				<a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a>
+        				<a href="http://app.frontfill.com/signup.php" class="CTA-btn">Try it now!</a>
 						<p>$ 1.99 / month</p>
         			</div>
         		</div>
-        		<div class="pricing-row-divider"><hr width="2" size="450"></div>
+        		<div class="pricing-row-divider"><hr></div>
         		<div class="pricing-row-right">
         			<div class="pricing-row-right-logo"></div>
         			<ul>
@@ -101,7 +110,7 @@
         			    <li>Userfriendly interface</li>
         			</ul>
         			<div class="pricing-row-CTA">
-        				<a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a>
+        				<a href="http://app.frontfill.com/signup.php" class="CTA-btn">Try it now!</a>
 						<p>$ 1.99 / month</p>
         			</div>
         		</div>

@@ -58,7 +58,8 @@ for (var element of document.getElementsByClassName("close-delete-section-modal"
 //Delete item modal
 for (var openDeleteItem of document.getElementsByClassName("delete-item-modal-btn")) {
 	let itemId = openDeleteItem.dataset.itemId;
-	openDeleteItem.addEventListener("click", function(){
+	openDeleteItem.addEventListener("click", function(e){
+		e.preventDefault();
 		var modal = document.getElementsByClassName("delete-item-modal")[0];
 		var itemIdInput = modal.querySelector("input[name=itemID]");
 		itemIdInput.value = itemId;
@@ -75,8 +76,13 @@ for (var closeDeleteItem of document.getElementsByClassName("close-delete-item-m
 
 
 // Open section bar
-$( ".menu" ).click(function() {
+function toggleMenu() {
 	$(".sidebar").slideToggle();
-});
+	$(".sidebar-overlay").toggle();
+}
+$( ".menu" ).click(toggleMenu);
+$( ".sidebar-overlay" ).click(toggleMenu);
+
+
 
 </script>

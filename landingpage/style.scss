@@ -55,7 +55,7 @@ h1, h2, h3, h4, a{
 //     Navigation       //
 //////////////////////////
 .navigation {
-	position: fixed;
+	position: absolute;
 	top: 0;
 	width: 100%;
 	padding-top: 20px;
@@ -83,7 +83,6 @@ h1, h2, h3, h4, a{
 				padding: 20px;
 				a {
 					color: $white; 
-					mix-blend-mode: difference;
 					text-decoration: none;
 					font-size: 24px;
 				}
@@ -95,7 +94,7 @@ h1, h2, h3, h4, a{
 		}
 	}
 
-	@media screen and (max-width: 870px) { 
+	@media screen and (max-width: 880px) { 
 		.navigation-left {
 			.navigation-left-img {
 				height: 60px;
@@ -105,7 +104,7 @@ h1, h2, h3, h4, a{
 		}
 	}
 
-	@media screen and (max-width: 620px) { 
+	@media screen and (max-width: 640px) { 
 		.navigation-right {
 			ul {
 
@@ -120,7 +119,7 @@ h1, h2, h3, h4, a{
 		}
 	}
 
-	@media screen and (max-width: 480px) { 
+	@media screen and (max-width: 520px) { 
 		.navigation-left {
 			float: none;
 			width: 100%;
@@ -174,7 +173,7 @@ h1, h2, h3, h4, a{
 		min-width: 310px;
 
 		h1 {
-			padding: 15px 0;
+			padding: 30px 0;
 		}
 
 		h3 {
@@ -383,6 +382,16 @@ h1, h2, h3, h4, a{
 					padding-top: 15px;
 				}
 
+				h3:after {
+					content: "";
+					position: absolute;
+					border-top: 1px solid $aqua-blue;
+					left: calc(50% - 13px);
+					bottom: 0;
+					width: 26px;
+					height: 0px;
+				}
+
 				p {
 					padding-top: 0;
 				}
@@ -494,6 +503,8 @@ h1, h2, h3, h4, a{
 				background-color: white;
     			border: none;
     			margin: 0 auto;
+    			width: 2px;
+    			height: 450px;
 			}		
 		}
 

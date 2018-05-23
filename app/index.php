@@ -10,7 +10,7 @@
 
 
 	require_once('include/db_con.php');
-	$sql = 'SELECT sectionID FROM sections WHERE users_userID = ? LIMIT 1';
+	$sql = 'SELECT sectionID FROM sections WHERE users_userID = ?';
 	$stmt = $con->prepare($sql);
 	$stmt->bind_param('i', $userID);
 	$stmt->execute();
@@ -33,7 +33,7 @@
 ?>
 
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="">
@@ -78,7 +78,7 @@
 							array_push($sections, $sectionID);?>
 							<div class="section delete-section">
 			        				<button title="Delete section" class="delete-section-modal-btn" data-section-id="<?=$sectionID?>"><img src="gfx/trashcan.svg" alt="Delete"></button>
-			        			<h4><a href=index.php?sectionID=<?=$sectionID?> class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?></a></h4>
+			        			<h4><a href="index.php?sectionID=<?=$sectionID?>" class="<?php if ($secID == $sectionID) {echo 'active';}; ?>"><?=$title?></a></h4>
 			        		</div>
 			        		<div class="divider"></div>
 				<?php
@@ -86,7 +86,7 @@
 					}
         		?>
         	</div>
-
+			<div class="sidebar-overlay"></div>
         	<div class="content <?php if (!empty($sections)) {echo 'not-empty';}; ?>">
         		<nav class="navigation">
         			<div class="navigation-left">

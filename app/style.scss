@@ -259,6 +259,16 @@ button {
 		}
 	}
 
+	.sidebar-overlay {
+		position: fixed;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		z-index: 100;
+		display: none;
+	}
+
 	.content {
 		background-color: $light-grey;
 		width: 100%;
@@ -380,6 +390,11 @@ button {
 					.CTA-btn {
 						margin: 20px 10px 30px 10px;
 						transition: transform .3s;
+					}
+
+					.outlined {
+						display: inline-block;
+    					box-sizing: border-box;
 					}
 
 					.CTA-btn:hover {

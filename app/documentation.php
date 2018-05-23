@@ -3,7 +3,7 @@
 ?>
 
 <!doctype html>
-<html>
+<html lang="en">
     <head>
         <meta charset="utf-8">
         <meta name="description" content="">
@@ -22,11 +22,12 @@
         		<div class="divider"></div>
         		<div class="TOC">
         			<ol>
-                        <li>Getting started</li>
-                        <ol type="i">
-                            <li>Step one</li>
-                            <li>Step two</li>
-                        </ol>
+                        <li>Getting started
+                            <ol type="i">
+                                <li>Step one</li>
+                                <li>Step two</li>
+                            </ol>
+                        </li>
                     </ol>
         		</div>
         	</div>

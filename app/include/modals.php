@@ -24,7 +24,7 @@ require_once('include/db_con.php');
 <!-- Create Section Modal -->
 <div class="modal create-section-modal">
 	<div class="modal-content">
-		<h2>Create section</h1>
+		<h2>Create section</h2>
 		<p>Creating a section will not make it appear on you site. Contact your developer for help</p>	
 		<form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']) . '?' . htmlspecialchars($_SERVER['QUERY_STRING']); ?>" method="POST">
 			<input name="title"  placeholder="Section Title (must be unique)" class="section-title" autofocus>

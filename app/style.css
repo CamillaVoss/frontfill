@@ -178,6 +178,14 @@ button {
       background: #343838;
       -webkit-box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5);
       box-shadow: inset 0 1px 2px 0 rgba(0, 0, 0, 0.5); }
+  .dashboard .sidebar-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: none; }
   .dashboard .content {
     background-color: #F2F2F2;
     width: 100%;
@@ -273,6 +281,10 @@ button {
             -o-transition: transform .3s;
             transition: transform .3s;
             transition: transform .3s, -webkit-transform .3s; }
+          .dashboard .content .content-area .items .item .outlined {
+            display: inline-block;
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box; }
           .dashboard .content .content-area .items .item .CTA-btn:hover {
             -webkit-transform: scale(1.2);
             -ms-transform: scale(1.2);
