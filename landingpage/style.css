@@ -96,7 +96,12 @@ h1, h2, h3, h4, a {
 .hero {
   height: 760px;
   width: 100%;
-  background-color: #004E64;
+  background-image: url("gfx/white-rectangle.svg"), -webkit-linear-gradient(303deg, #00869D 16%, #00849C 19%, #00586F 85%, #004E64 100%);
+  background-image: url("gfx/white-rectangle.svg"), -o-linear-gradient(303deg, #00869D 16%, #00849C 19%, #00586F 85%, #004E64 100%);
+  background-image: url("gfx/white-rectangle.svg"), linear-gradient(-213deg, #00869D 16%, #00849C 19%, #00586F 85%, #004E64 100%);
+  background-size: 101% auto, 100%;
+  background-repeat: no-repeat;
+  background-position: bottom;
   color: #FFFFFF;
   overflow: hidden; }
   .hero .hero-left {
@@ -163,7 +168,17 @@ h1, h2, h3, h4, a {
   overflow: hidden; }
   .info h2 {
     color: #00A5CF;
-    padding-bottom: 50px; }
+    position: relative;
+    margin-bottom: 50px;
+    padding-bottom: 10px; }
+  .info h2:after {
+    content: "";
+    position: absolute;
+    border-top: 1px solid #004E64;
+    left: calc(50% - 13px);
+    bottom: 0;
+    width: 26px;
+    height: 0px; }
   .info .info-row {
     height: 350px;
     text-align: left;
@@ -181,7 +196,17 @@ h1, h2, h3, h4, a {
     .info .info-row h3 {
       padding-top: 50px;
       color: #00A5CF;
+      margin-bottom: 10px;
+      position: relative;
       padding-bottom: 10px; }
+    .info .info-row h3:after {
+      content: "";
+      position: absolute;
+      border-top: 1px solid #004E64;
+      left: 0;
+      bottom: 0;
+      width: 26px;
+      height: 0px; }
     .info .info-row p {
       color: #343838;
       line-height: 1.3; }
@@ -254,7 +279,17 @@ h1, h2, h3, h4, a {
   text-align: center; }
   .pricing h2 {
     padding-top: 50px;
-    color: #FFFFFF; }
+    color: #FFFFFF;
+    position: relative;
+    padding-bottom: 10px; }
+  .pricing h2:after {
+    content: "";
+    position: absolute;
+    border-top: 1px solid #FFFFFF;
+    left: calc(50% - 13px);
+    bottom: 0;
+    width: 26px;
+    height: 0px; }
   .pricing .pricing-row {
     padding-top: 50px;
     padding-bottom: 50px;

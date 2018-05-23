@@ -188,6 +188,9 @@ if (filter_input(INPUT_POST, 'deleteSection')) {
     };
 
     $con->commit();
+
+    header("Location: index.php");
+	die('');
 }
 
 
@@ -218,6 +221,9 @@ if (filter_input(INPUT_POST, 'addItem')) {
 	$stmt->execute();
 
 	$_SESSION['add_item'] = true;
+
+	header("Location: index.php?sectionID=".$sectionID);
+	die('');
 }
 
 
@@ -227,6 +233,7 @@ if (filter_input(INPUT_POST, 'addItem')) {
 
 if (filter_input(INPUT_POST, 'saveItem')) {
 	
+	$sectionID = $_GET['sectionID'];
 	$itemID = filter_input(INPUT_POST,'itemID');
 	$title = filter_input(INPUT_POST,'title');
 	$content = filter_input(INPUT_POST,'content');	
@@ -276,6 +283,9 @@ if (filter_input(INPUT_POST, 'saveItem')) {
 	} else {
 		$_SESSION['item_exists'] = true;
 	}
+
+	header("Location: index.php?sectionID=".$sectionID);
+	die('');
 }
 
 
@@ -285,6 +295,7 @@ if (filter_input(INPUT_POST, 'saveItem')) {
 
 if (filter_input(INPUT_POST, 'deleteItem')) {
 	
+	$sectionID = $_GET['sectionID'];
 	$itemID = filter_input(INPUT_POST,'itemID');
 
 	require_once('db_con.php');
@@ -315,6 +326,9 @@ if (filter_input(INPUT_POST, 'deleteItem')) {
     $con->commit();
 
     $_SESSION['delete_item'] = true;
+
+    header("Location: index.php?sectionID=".$sectionID);
+	die('');
 }
 
 

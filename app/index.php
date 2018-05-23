@@ -3,6 +3,7 @@
 
 	if (empty($_SESSION['userID'])) {
 		header("Location: signin.php");
+		die('');
 	} else {
 		$userID = $_SESSION['userID'];
 	}
@@ -19,12 +20,16 @@
 		array_push($sectionIDs, $sectionID);
 	}
 
-	if (empty($_SERVER['QUERY_STRING'])) {
+	$secID = filter_input(INPUT_GET, 'sectionID', FILTER_VALIDATE_INT);
+	
+
+	if (empty($sectionIDs) && !empty($_SERVER['QUERY_STRING'])) {
+		header("Location: index.php");
+		die('');
+	} elseif (!in_array($secID, $sectionIDs) && !empty($sectionIDs)) {
 		header("Location: index.php?sectionID=".$sectionIDs[0]);
 		die('');
 	}
-
-	$secID = filter_input(INPUT_GET, 'sectionID', FILTER_VALIDATE_INT);
 ?>
 
 <!doctype html>
@@ -39,6 +44,7 @@
 		<meta property="og:image" content="gfx/share.png">
 		<meta property="og:url" content="http://frontfill.com/">
         <title>Frontfill | Dynamic content app</title>
+        <meta name="Description" content="It is time to make your static site dynamic!">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" 
@@ -88,7 +94,7 @@
         			</div>
 		        	<div class="navigation-right">
 		            	<ul>
-			             	<li><a href="documentation.php">Documentaion</a></li>
+			             	<li><a href="documentation.php">Documentation</a></li>
 			             	<li><a href="include/signout.php">Sign Out</a></li>
 			            </ul>
 		            </div>

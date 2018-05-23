@@ -29,7 +29,8 @@
 	if (array_key_exists('add_item', $_SESSION) && $_SESSION['add_item']) { 
 ?>
 		<div class="alert green" id="alert">
-			<p>Item added</p>
+			<p>Item added. </p> 
+			<p><strong>Creating an item will not make it appear on you site. Contact your developer for help</strong></p>
 		</div>
 <?php 
 	}

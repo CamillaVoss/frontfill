@@ -420,6 +420,8 @@ button {
       padding: 5px; }
     .modal .modal-content h2, .modal .modal-content p {
       padding: 5px 0 20px 0; }
+    .modal .modal-content p {
+      color: red; }
     .modal .modal-content .two-buttons .filled {
       margin-right: 10px; }
     .modal .modal-content input[name="title"] {

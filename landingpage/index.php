@@ -10,6 +10,7 @@
         <meta property="og:image" content="gfx/share.png">
         <meta property="og:url" content="http://frontfill.com/">
         <title>Frontfill | Dynamic content app</title>
+        <meta name="Description" content="It is time to make your static site dynamic!">
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700,700i" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" 
@@ -25,7 +26,7 @@
             	<ul>
 	             	<li><a href="#info-point">How it works</a></li>
 	             	<li><a href="#price-point">Pricing</a></li>
-	             	<li><a href="#"><button class="CTA-btn">Try it now!</button></a></li>
+	             	<li><a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a></li>
 	            </ul>
             </div>
         </nav>
@@ -34,7 +35,7 @@
         	<div class="hero-left">
         		<h1>It is time to make your <strong>static</strong> site <i>dynamic</i>!</h1>
         		<h3>Spare the hassle of content management systems, and try this simple solution</h3>
-        		<a href="#"><button class="CTA-btn">Try it now!</button></a>
+        		<a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a>
         	</div>
         	<div class="hero-right">
         		<div class="hero-right-image"></div>
@@ -85,8 +86,8 @@
         			    <li>Userfriendly interface</li>
         			</ul>
         			<div class="pricing-row-CTA">
-        				<a href="#"><button class="CTA-btn">Try it now!</button></a>
-						<p>at $ xx/month</p>
+        				<a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a>
+						<p>$ 1.99 / month</p>
         			</div>
         		</div>
         		<div class="pricing-row-divider"><hr width="2" size="450"></div>
@@ -100,8 +101,8 @@
         			    <li>Userfriendly interface</li>
         			</ul>
         			<div class="pricing-row-CTA">
-        				<a href="#"><button class="CTA-btn">Try it now!</button></a>
-						<p>at $ xx/month</p>
+        				<a href="http://app.frontfill.com/signup.php"><button class="CTA-btn">Try it now!</button></a>
+						<p>$ 1.99 / month</p>
         			</div>
         		</div>
         	</div>
