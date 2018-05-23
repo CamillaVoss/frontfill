@@ -17,11 +17,54 @@ if (!empty($_GET['api-key']) && !empty($_GET['section']) && !empty($_GET['item']
 
 	} else if (!empty($content_result['value'])) {
 
-		response(200, "Content found", $content);
+		response(200, "Item found", $content);
 
 	} else {
 		
-		response(404, "Content not found", NULL);
+		response(404, "Item not found", NULL);
+
+	};
+
+} elseif (!empty($_GET['api-key']) && !empty($_GET['section']) && empty($_GET['item'])) {
+
+	$api_key = $_GET['api-key'];
+	$section = $_GET['section'];
+
+	$section_result = get_section_content($api_key, $section);
+	$content = $section_result['value'];
+
+	if ($section_result['error'] === 'invalid-api-key') {
+
+		response(404, "Invalid API", NULL);
+
+	} else if (!empty($section_result['value'])) {
+
+		response(200, "Section found", $content);
+
+	} else {
+		
+		response(404, "Section not found", NULL);
+
+	};
+
+} elseif (!empty($_GET['api-key']) && empty($_GET['section']) && empty($_GET['item'])) {
+
+	$api_key = $_GET['api-key'];
+
+	$user_result = get_user_content($api_key);
+	$content = $user_result['value'];
+
+	if ($user_result['error'] === 'invalid-api-key') {
+
+		response(404, "Invalid API", NULL);
+
+	} else if (!empty($user_result['value'])) {
+
+		response(200, "User found", $content);
+
+	} else {
+		
+		response(404, "User not found", NULL);
 
 	};
 
