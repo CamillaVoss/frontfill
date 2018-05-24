@@ -10,6 +10,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Frontfill | Documentation</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
         <link rel="icon" 
               type="image/png" 
@@ -24,8 +25,9 @@
         			<ol>
                         <li>Getting started
                             <ol type="i">
-                                <li>Step one</li>
-                                <li>Step two</li>
+                                <li>Retrieve all data within user profile</li>
+                                <li>Retrieve all data within section</li>
+                                <li>Retrieve content from single item</li>
                             </ol>
                         </li>
                     </ol>
@@ -44,13 +46,28 @@
 		        </nav>
                 
                 <div class="documentation-text">
-                    <h1>Documentation</h1>
-                    <h2>1. Get Started</h2>
-                    <h3>1.i Step one</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-
-                    <h3>1.ii Step two</h3>
-                    <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+                    <div class="documentation-section">
+                        <h1>Documentation</h1>
+                        <h2>1. Get Started</h2>
+                        An API request requires a request in the following form:
+                        <p class="code">http://frontfill.com/api.php?[parameters]</p>
+                        <p>There are three different parameters to use when retrieving content from the API</p>
+                    </div>
+                    <div class="documentation-section">
+                        <h3>1.i Retrieve all data within user profile</h3>
+                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]</p>
+                        <p>This will give you an output of all the sections withing a user, and all content withing the sections</p>
+                    </div>
+                    <div class="documentation-section">
+                        <h3>1.ii Retrieve all data within section</h3>
+                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]&section=[section_title]</p>
+                        <p>This will give you an output of all the content withing the sections</p>
+                    </div>
+                    <div class="documentation-section">
+                        <h3>1.iii Retrieve content from single item</h3>
+                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]&section=[section_title]&item=[item_title]</p>
+                        <p>This will give you the content of a single item</p>
+                    </div>
                 </div>
         	</div>
         </div>
