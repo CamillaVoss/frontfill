@@ -228,6 +228,9 @@ button {
 				overflow: hidden;
 				line-height: 60px;
 				z-index: 1;
+				text-overflow: ellipsis;
+			    max-width: 140px;
+			    white-space: nowrap;
 
 				a {
 					text-decoration: none;

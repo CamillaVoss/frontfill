@@ -113,7 +113,6 @@ button {
   display: -ms-flexbox;
   display: flex; }
   .dashboard .sidebar {
-    display: box;
     background-color: #343838;
     -webkit-box-flex: 0;
     -ms-flex-positive: 0;
@@ -159,7 +158,11 @@ button {
         font-size: 20px;
         overflow: hidden;
         line-height: 60px;
-        z-index: 1; }
+        z-index: 1;
+        -o-text-overflow: ellipsis;
+        text-overflow: ellipsis;
+        max-width: 140px;
+        white-space: nowrap; }
         .dashboard .sidebar .section h4 a {
           text-decoration: none;
           color: #FFFFFF;
