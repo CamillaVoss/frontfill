@@ -34,10 +34,7 @@ function get_item_content($api_key, $section, $item) {
     $stmt->fetch();
 
 	// success
-	$result['value'] = array(
-		'title' => $item,
-		'content' => $content
-	);
+	$result['value'] = $content;
 	return $result;
 };
 
@@ -95,19 +92,13 @@ function get_section_content($api_key, $section) {
 	    $stmt->bind_result($content);
 		$stmt->fetch();
 
-		$contents[] = array(
-			'title' => $item,
-			'content' => $content
-		);
+		$contents[$item] = $content;
 
 		$stmt->close();
 	}
 	
 	// success
-	$result['value'] = array(
-		'title' => $section,
-		'items' => $contents
-	);
+	$result['value'] = $contents;
 	return $result;
 };
 
@@ -168,10 +159,7 @@ function get_user_content($api_key) {
 	$contents = array();
 
 	foreach ($items_by_section as $section => $items) {
-		$section_data = array(
-			'title' => $section,
-			'items' => array()
-		);
+		$section_data = array();
 		foreach ($items as $item) {
 			$sql = 'SELECT content
 			        FROM fields
@@ -187,20 +175,15 @@ function get_user_content($api_key) {
 		    $stmt->bind_result($content);
 			$stmt->fetch();
 
-			$section_data['items'][] = array(
-				'title' => $item,
-				'content' => $content
-			);
+			$section_data[$item] = $content;
 
 			$stmt->close();
 		}
-		$contents[] = $section_data;
+		$contents[$section] = $section_data;
 	}
 	
 	// success
-	$result['value'] = array(
-		'sections' => $contents
-	);
+	$result['value'] = $contents;
 	return $result;
 };
 
