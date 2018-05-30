@@ -49,7 +49,7 @@
                     <div class="documentation-section">
                         <h1>Documentation</h1>
                         <h2>1. Get Started</h2>
-                        An API request requires a request in the following form:
+                        <p>An API request requires a request in the following form: </p>
                         <p class="code">http://frontfill.com/api.php?[parameters]</p>
                         <p>There are three different parameters to use when retrieving content from the API</p>
                     </div>
@@ -60,12 +60,12 @@
                     </div>
                     <div class="documentation-section">
                         <h3>1.ii Retrieve all data within section</h3>
-                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]&section=[section_title]</p>
+                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]&amp;section=[section_title]</p>
                         <p>This will give you an output of all the content withing the sections</p>
                     </div>
                     <div class="documentation-section">
                         <h3>1.iii Retrieve content from single item</h3>
-                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]&section=[section_title]&item=[item_title]</p>
+                        <p class="code">http://frontfill.com/api.php?api-key=[your_API_key]&amp;section=[section_title]&item=[item_title]</p>
                         <p>This will give you the content of a single item</p>
                     </div>
                 </div>

@@ -116,9 +116,12 @@ if (filter_input(INPUT_POST, 'addSection')) {
 
 	require_once('db_con.php');
 
-	$sql = 'SELECT sectionID FROM sections WHERE title = ?';
+	$sql = 'SELECT sectionID 
+			FROM sections 
+			WHERE title = ?
+			AND users_userID = ?';
 	$stmt = $con->prepare($sql);
-	$stmt->bind_param('s', $title);
+	$stmt->bind_param('si', $title, $userID);
 	$stmt->execute();
 	$stmt->bind_result($sectionID);
 	while ($stmt->fetch()) {}
@@ -211,14 +214,20 @@ if (filter_input(INPUT_POST, 'addItem')) {
 	$sql = 'INSERT INTO items (sections_sectionID, type, numbOfCol) VALUES (?, ?, ?)';
 	$stmt = $con->prepare($sql);
 	$stmt->bind_param('iii', $sectionID, $type, $numbOfCol);
-	$stmt->execute();
+	if (!$stmt->execute()) {
+		printf("Error message: %s\n", $con->error);
+		die();
+	}
 
 	$itemID = $stmt->insert_id;
 
 	$sql = 'INSERT INTO fields (row, col, items_itemID) VALUES (?, ?, ?)';
 	$stmt = $con->prepare($sql);
 	$stmt->bind_param('iii', $row, $col, $itemID);
-	$stmt->execute();
+	if (!$stmt->execute()) {
+		printf("Error message: %s\n", $con->error);
+		die();
+	}
 
 	$_SESSION['add_item'] = true;
 
@@ -240,9 +249,12 @@ if (filter_input(INPUT_POST, 'saveItem')) {
 
 	require_once('db_con.php');
 
-	$sql = 'SELECT itemID FROM items WHERE title = ?';
+	$sql = 'SELECT itemID 
+			FROM items 
+			WHERE title = ?
+			AND sections_sectionID = ?';
 	$stmt = $con->prepare($sql);
-	$stmt->bind_param('s', $title);
+	$stmt->bind_param('si', $title, $sectionID);
 	$stmt->execute();
 	$stmt->bind_result($itemIDs);
 	while ($stmt->fetch()) {}

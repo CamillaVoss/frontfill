@@ -90,6 +90,10 @@ h1, h2, h3, h4, a{
 				a:hover {
 					text-decoration: underline;
 				}
+
+				.CTA-btn:hover {
+					text-decoration: none;
+				}
 			}
 		}
 	}
@@ -191,7 +195,7 @@ h1, h2, h3, h4, a{
 		.hero-right-image {
 			height: 500px;
 			width: 100%;
-			background-image: url("gfx/iMac.svg");
+			background-image: url("gfx/iMac.png");
 			background-size: contain;
 			background-repeat: no-repeat;
 			background-position: center;
