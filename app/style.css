@@ -60,6 +60,9 @@ button {
       padding-top: 40px; }
       .full-size .content .form h1 {
         padding-bottom: 20px; }
+      .full-size .content .form h2 {
+        padding-bottom: 20px;
+        color: red; }
       .full-size .content .form input {
         padding: 15px;
         margin-top: 5px;

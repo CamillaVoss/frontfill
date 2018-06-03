@@ -86,7 +86,8 @@ h1, h2, h3, h4, a {
     .navigation .navigation-right {
       float: none;
       width: 100%;
-      padding-top: 15px; }
+      padding-top: 15px;
+      padding-right: 0; }
       .navigation .navigation-right ul {
         margin: 0 auto;
         text-align: center;

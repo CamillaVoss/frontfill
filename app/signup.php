@@ -11,6 +11,9 @@
         <title>Frontfill | Sign up</title>
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <link rel="icon" 
+      		  type="image/png" 
+      		  href="gfx/favicon.png">
     </head>
     <body>
     	<div class="full-size">
@@ -19,7 +22,12 @@
 				<div class="form">
 					<form action="<?=$_SERVER['PHP_SELF']?>" method="POST">
 						<h1>Create new user</h1>
-
+						<?php
+                        if ($exists) { ?>
+                            <h2>An user with this email already exists</h2>
+                        <?php    
+                        }
+                        ?>
 						<div class="form-group">
 		                	<input type="email" name="email" placeholder="Email" required autofocus>
 		                </div>
